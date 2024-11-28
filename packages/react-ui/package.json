@@ -1,0 +1,21 @@
+{
+  "name": "@openepi/react-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "panda codegen"
+  },
+  "dependencies": {
+    "@ark-ui/react": "^4.4.4",
+    "@openepi/icons": "*",
+    "@zag-js/anatomy": "^0.77.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.47.1",
+    "@types/lodash": "^4.17.13",
+    "@types/react": "^18.3.12",
+    "postcss": "^8.4.47"
+  }
+}
