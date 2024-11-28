@@ -1,0 +1,1 @@
+export type IconVariant = "outlined" | "rounded" | "sharp"

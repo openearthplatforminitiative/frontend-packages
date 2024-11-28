@@ -1,0 +1,14 @@
+import * as React from "react"
+import type { SVGProps } from "react"
+const SvgSignalWifi4BarFill = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="1em"
+		height="1em"
+		viewBox="0 -960 960 960"
+		{...props}
+	>
+		<path d="M480-120 0-600q99-94 221-147t259-53 259 53 221 147z" />
+	</svg>
+)
+export default SvgSignalWifi4BarFill

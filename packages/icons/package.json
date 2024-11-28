@@ -1,0 +1,33 @@
+{
+  "name": "@openepi/icons",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "generate-icons": "node scripts/generate-icons.mjs",
+    "generate-types": "node scripts/generate-svg-types.mjs"
+  },
+  "dependencies": {
+    "@svgr/cli": "^8.1.0"
+  },
+  "devDependencies": {
+    "@material-symbols/svg-400": "0.27.0",
+    "@types/react": "^18.3.12",
+    "jsdom": "^25.0.1"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./icons/*": {
+      "import": "./dist/icons/*.js",
+      "require": "./dist/icons/*.js"
+    }
+  }
+}
