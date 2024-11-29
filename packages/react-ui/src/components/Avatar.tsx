@@ -10,38 +10,40 @@ export interface AvatarProps extends ArkAvatar.RootProps {
 	src?: string
 }
 
-export const Avatar = styled(
-	forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
-		const { name, src, ...rootProps } = props
-		return (
-			<ArkAvatar.Root
-				ref={ref}
-				{...rootProps}
+const baseAvatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
+	const { name, src, ...rootProps } = props
+	return (
+		<ArkAvatar.Root
+			ref={ref}
+			{...rootProps}
+			className={cx(
+				avatar(avatar.splitVariantProps(props)[0])?.["root"],
+				props.className
+			)}
+		>
+			<ArkAvatar.Fallback
 				className={cx(
-					avatar(avatar.splitVariantProps(props)[0])?.["root"],
+					avatar(avatar.splitVariantProps(props)[0])?.["fallback"],
 					props.className
 				)}
 			>
-				<ArkAvatar.Fallback
-					className={cx(
-						avatar(avatar.splitVariantProps(props)[0])?.["fallback"],
-						props.className
-					)}
-				>
-					{getInitials(name) || <Icon name="Person" />}
-				</ArkAvatar.Fallback>
-				<ArkAvatar.Image
-					src={src}
-					alt={name}
-					className={cx(
-						avatar(avatar.splitVariantProps(props)[0])?.["image"],
-						props.className
-					)}
-				/>
-			</ArkAvatar.Root>
-		)
-	})
-)
+				{getInitials(name) || <Icon name="Person" />}
+			</ArkAvatar.Fallback>
+			<ArkAvatar.Image
+				src={src}
+				alt={name}
+				className={cx(
+					avatar(avatar.splitVariantProps(props)[0])?.["image"],
+					props.className
+				)}
+			/>
+		</ArkAvatar.Root>
+	)
+})
+
+baseAvatar.displayName = "Avatar"
+
+export const Avatar = styled(baseAvatar, avatar)
 
 const getInitials = (name = "") =>
 	name
