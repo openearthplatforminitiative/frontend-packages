@@ -21,23 +21,5 @@ packages/*/.vscode
 .vscode
 .yarn/*
 .vercel
-styled-system/*
-**/styled-system/*
-
 ## Panda
-../panda/styled-system
-../panda/styled-system-studio
-## Panda
-src/styled-system
-src/styled-system-studio
-## Panda
-../styled-system/src
-../styled-system/src-studio
-*storybook.log
-
-## Panda
-./src
-./src-studio
-## Panda
-../react-ui/styled-system
-../react-ui/styled-system-studio
+styled-system
