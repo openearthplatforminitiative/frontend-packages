@@ -8,8 +8,7 @@ import {
 	FieldRequiredIndicator,
 	FieldSelect,
 	FieldTextarea,
-} from "../src/components/Field"
-import { RequiredIndicator } from "@ark-ui/react/dist/components/field/field"
+} from "@openepi/react-ui/Field"
 
 const meta: Meta<typeof Field> = {
 	title: "Components/Field",

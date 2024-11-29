@@ -5,8 +5,8 @@ import {
 	AccordionItemIndicator,
 	AccordionItemTrigger,
 	Accordion,
-} from "../src/components/Accordion"
-import { accordion } from "../styled-system/recipes"
+} from "@openepi/react-ui/Accordion"
+import { accordion } from "../../styled-system/recipes"
 import { Icon } from "packages/icons"
 
 const meta: Meta<typeof Accordion> = {

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react"
-import { Button } from "../src/components/Button"
-import { IconButton } from "../src/components/IconButton"
+import { Button } from "@openepi/react-ui/Button"
+import { IconButton } from "@openepi/react-ui/IconButton"
 import Close from "@openepi/icons/icons/Close"
 import {
 	Dialog,
@@ -13,8 +13,8 @@ import {
 	DialogPositioner,
 	DialogTitle,
 	DialogTrigger,
-} from "../src/components/Dialog"
-import { Portal } from "../src/components/Portal"
+} from "@openepi/react-ui/Dialog"
+import { Portal } from "@openepi/react-ui/Portal"
 
 const meta: Meta<typeof Dialog> = {
 	title: "Components/Dialog",

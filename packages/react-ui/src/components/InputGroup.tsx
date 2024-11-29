@@ -1,8 +1,7 @@
 import { ark } from "@ark-ui/react"
-import { Box, styled } from "../../styled-system/jsx"
+import { styled } from "../../styled-system/jsx"
 import { inputGroup } from "../../styled-system/recipes"
 import { forwardRef, useRef, cloneElement, ReactElement } from "react"
-import css from "styled-jsx/css"
 
 export type InputGroupProps = {
 	leftComponent?: React.ReactNode
@@ -17,14 +16,7 @@ const BaseInputGroup = forwardRef<HTMLDivElement, InputGroupProps>(
 		const childrenRef = useRef<HTMLElement | null>(null)
 
 		const handleClick = () => {
-			if (childrenRef.current) {
-				if (typeof childrenRef.current.click === "function") {
-					childrenRef.current.click()
-				}
-				if (typeof (childrenRef.current as any).focus === "function") {
-					;(childrenRef.current as any).focus()
-				}
-			}
+			if (childrenRef.current) childrenRef.current.click()
 		}
 
 		const clonedChildren = cloneElement(children, {
@@ -50,5 +42,7 @@ const BaseInputGroup = forwardRef<HTMLDivElement, InputGroupProps>(
 		)
 	}
 )
+
+BaseInputGroup.displayName = "InputGroup"
 
 export const InputGroup = styled(BaseInputGroup, inputGroup)

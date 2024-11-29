@@ -1,5 +1,5 @@
-import { styled } from "@openepi/react-ui/styled-system/jsx"
-import { icon as iconRecipe } from "@openepi/react-ui/styled-system/recipes"
+import { styled } from "../../styled-system/jsx"
+import { icon as iconRecipe } from "../../styled-system/recipes"
 import { ark, HTMLArkProps } from "@ark-ui/react"
 import {
 	Icon as IconComponent,

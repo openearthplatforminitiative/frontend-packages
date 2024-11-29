@@ -19,7 +19,8 @@
     "@next/bundle-analyzer": "^15.0.3",
     "next": "14.2.18",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "@openepi/react-ui": "*"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",

@@ -82,11 +82,23 @@ export const buttonRecipe = defineRecipe({
         _hover: {
           bg: "colorPalette.subtle",
         },
+        _expanded: {
+          bg: "colorPalette.muted",
+          _hover: {
+            bg: "colorPalette.subtle"
+          }
+        },
       },
       ghost: {
         color: "fg",
         _hover: {
           bg: "gray.subtle",
+        },
+        _open: {
+          bg: "colorPalette.muted",
+          _hover: {
+            bg: "colorPalette.subtle"
+          }
         },
         _active: {
           bg: "colorPalette.muted",

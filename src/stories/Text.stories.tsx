@@ -1,6 +1,6 @@
 import { Meta, StoryFn, StoryObj } from "@storybook/react"
-import { Text } from "../src/components/Text"
-import { VStack } from "../styled-system/jsx"
+import { Text } from "@openepi/react-ui/Text"
+import { VStack } from "../../styled-system/jsx"
 
 const meta: Meta<typeof Text> = {
 	title: "Components/Text",

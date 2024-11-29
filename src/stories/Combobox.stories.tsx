@@ -12,37 +12,34 @@ import {
 	ComboboxItemText,
 	ComboboxPositioner,
 	ComboboxTrigger,
-} from "../src/components/Combobox"
+} from "@openepi/react-ui/Combobox"
 import { useMemo, useState } from "react"
-import { Portal } from "../src/components/Portal"
+import { Portal } from "@openepi/react-ui/Portal"
 import {
 	ComboboxContext,
 	ComboboxInputValueChangeDetails,
 	createListCollection,
 } from "@ark-ui/react"
-import { Field, FieldInput, FieldLabel } from "../src/components/Field"
-import { Icon } from "../src/components/Icon"
+import { Field, FieldLabel } from "@openepi/react-ui/Field"
+import { Icon } from "@openepi/react-ui/Icon"
 import {
 	TagsInput,
-	TagsInputClearTrigger,
 	TagsInputContext,
 	TagsInputControl,
 	TagsInputInput,
-	TagsInputHiddenInput,
-} from "../src/components/TagsInput"
+} from "@openepi/react-ui/TagsInput"
 import {
 	Tag,
 	TagDeleteTrigger,
-	TagInput,
 	TagPreview,
 	TagText,
-} from "../src/components/Tag"
+} from "@openepi/react-ui/Tag"
 import Close from "packages/icons/dist/icons/Close"
 import KeyboardArrowDown from "packages/icons/dist/icons/KeyboardArrowDown"
-import { IconButton } from "../src/components/IconButton"
+import { IconButton } from "@openepi/react-ui/IconButton"
 import { groupBy } from "lodash"
-import { InputGroup } from "../src/components/InputGroup"
-import { HStack } from "../styled-system/jsx"
+import { InputGroup } from "@openepi/react-ui/InputGroup"
+import { HStack } from "../../styled-system/jsx"
 
 const initialItems = ["React", "Solid", "Vue"]
 
@@ -232,61 +229,65 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
 	return (
 		<Field>
 			<FieldLabel>Select Countries</FieldLabel>
-			<Combobox
-				multiple
-				openOnClick
-				collection={collection}
-				onInputValueChange={handleInputChange}
-			>
+			<Combobox multiple openOnClick allowCustomValue collection={collection}>
 				<ComboboxContext>
-					{(tagsInput) => (
+					{(combobox) => (
 						<ComboboxControl>
-							<InputGroup
-								rightComponent={
-									<HStack gap={1}>
-										<ComboboxClearTrigger asChild>
-											<IconButton
-												variant="outline"
-												size="2xs"
-												colorPalette="gray"
-												icon={<Close />}
-											/>
-										</ComboboxClearTrigger>
-										<ComboboxTrigger asChild>
-											<IconButton
-												size="2xs"
-												colorPalette="gray"
-												icon={<KeyboardArrowDown />}
-											/>
-										</ComboboxTrigger>
-									</HStack>
-								}
+							<TagsInput
+								max={2}
+								allowOverflow
+								value={combobox.value}
+								onInputValueChange={handleInputChange}
+								onValueChange={(value) => combobox.setValue(value.value)}
+								validate={(value) => country_list.includes(value.inputValue)}
+								onFocus={() => combobox.setOpen(true)}
+								editable={false}
 							>
-								<TagsInput
-									max={2}
-									allowOverflow
-									onClick={() => tagsInput.setOpen(true)}
-								>
-									<TagsInputControl>
-										{tagsInput.value.map((value, index) => (
-											<Tag key={index} index={index} value={value}>
-												<TagPreview>
-													<TagText>{value}</TagText>
-													<TagDeleteTrigger
-														onClick={() => tagsInput.clearValue(value)}
-													>
-														<Close />
-													</TagDeleteTrigger>
-												</TagPreview>
-												<TagInput />
-											</Tag>
-										))}
-										<ComboboxInput asChild>
-											<TagsInputInput />
-										</ComboboxInput>
-									</TagsInputControl>
-								</TagsInput>
-							</InputGroup>
+								<TagsInputContext>
+									{(tagsInput) => (
+										<InputGroup
+											rightComponent={
+												<HStack gap={1}>
+													<ComboboxClearTrigger asChild>
+														<IconButton
+															variant="outline"
+															size="2xs"
+															colorPalette="gray"
+															icon={<Close />}
+														/>
+													</ComboboxClearTrigger>
+													<ComboboxTrigger asChild>
+														<IconButton
+															size="2xs"
+															colorPalette="gray"
+															icon={<KeyboardArrowDown />}
+														/>
+													</ComboboxTrigger>
+												</HStack>
+											}
+										>
+											<TagsInputControl>
+												{tagsInput.value.map((value, index) => (
+													<Tag key={index} index={index} value={value}>
+														<TagPreview>
+															<TagText>{value}</TagText>
+															<TagDeleteTrigger>
+																<Close />
+															</TagDeleteTrigger>
+														</TagPreview>
+													</Tag>
+												))}
+												{/* <ComboboxInput asChild>
+													<TagsInputInput />
+												</ComboboxInput> */}
+												<TagsInputInput asChild>
+													<ComboboxInput />
+												</TagsInputInput>
+											</TagsInputControl>
+										</InputGroup>
+									)}
+								</TagsInputContext>
+							</TagsInput>
 						</ComboboxControl>
 					)}
 				</ComboboxContext>

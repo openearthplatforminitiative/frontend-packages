@@ -7,9 +7,9 @@ import {
 	MenuIndicator,
 	MenuSeparator,
 	MenuTriggerItem,
-} from "../src/components/Menu"
-import { Button } from "../src/components/Button"
-import { Icon } from "../src/components/Icon"
+} from "@openepi/react-ui/Menu"
+import { Button } from "@openepi/react-ui/Button"
+import { Icon } from "@openepi/react-ui/Icon"
 
 const meta: Meta<typeof Menu> = {
 	title: "Components/Menu",
@@ -19,6 +19,7 @@ const meta: Meta<typeof Menu> = {
 		<Menu positioning={{ placement: "bottom-end" }}>
 			<MenuTrigger asChild>
 				<Button
+					variant="outline"
 					rightComponent={
 						<MenuIndicator>
 							<Icon name="KeyboardArrowDown" />

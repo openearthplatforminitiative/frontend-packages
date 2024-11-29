@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "prepare": "panda codegen"
   },
   "dependencies": {
@@ -17,5 +18,11 @@
     "@types/lodash": "^4.17.13",
     "@types/react": "^18.3.12",
     "postcss": "^8.4.47"
+  },
+  "exports": {
+    "./*": {
+      "import": "./dist/components/*.js",
+      "require": "./dist/components/*.js"
+    }
   }
 }

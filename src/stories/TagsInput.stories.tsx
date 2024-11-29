@@ -1,5 +1,5 @@
 import { Meta, StoryFn, StoryObj } from "@storybook/react"
-import { Field, FieldInput } from "../src/components/Field"
+import { Field, FieldInput } from "@openepi/react-ui/Field"
 import {
 	TagsInput,
 	TagsInputLabel,
@@ -8,7 +8,7 @@ import {
 	TagsInputClearTrigger,
 	TagsInputContext,
 	TagsInputHiddenInput,
-} from "../src/components/TagsInput"
+} from "@openepi/react-ui/TagsInput"
 import Close from "@openepi/icons/icons/Close"
 import { HStack } from "../styled-system/jsx"
 import {
@@ -17,9 +17,9 @@ import {
 	TagInput,
 	TagPreview,
 	TagText,
-} from "../src/components/Tag"
-import { IconButton } from "../src/components/IconButton"
-import { InputGroup } from "../src/components/InputGroup"
+} from "@openepi/react-ui/Tag"
+import { IconButton } from "@openepi/react-ui/IconButton"
+import { InputGroup } from "@openepi/react-ui/InputGroup"
 
 const meta: Meta<typeof TagsInput> = {
 	title: "Components/TagsInput",
