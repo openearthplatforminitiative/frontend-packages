@@ -3,6 +3,8 @@ import { Button } from "@openepi/react-ui/Button"
 import { HStack, Stack } from "../../styled-system/jsx"
 import { button } from "../../styled-system/recipes"
 import { Text } from "@openepi/react-ui/Text"
+import { Notifications } from "@openepi/icons/icons"
+import { Icon } from "@openepi/react-ui/Icon"
 
 const meta: Meta<typeof Button> = {
 	title: "Components/Button/Button",
@@ -118,15 +120,28 @@ export const Disabled: StoryFn<typeof Button> = (args) => (
 	</Button>
 )
 
-export const IconButton: StoryFn<typeof Button> = (args) => (
+export const WithIcon: StoryFn<typeof Button> = (args) => (
 	<HStack gap={2}>
-		<Button key="add" leftIcon="Add" {...args}>
-			Icon Button
+		<Button
+			key="add"
+			variant="subtle"
+			colorPalette="gray"
+			leftComponent={<Icon icon={<Notifications />} />}
+			{...args}
+		>
+			3
 		</Button>
-		<Button key="alarm" rightIcon="Alarm" {...args}>
-			Icon Button
+		<Button key="alarm" rightIcon="Add" {...args}>
+			Add Element
 		</Button>
-		<Button key="remove" bg={"red.600"} rightIcon="Remove" {...args}>
+		<Button
+			key="remove"
+			colorPalette="gray"
+			bg="red.600"
+			borderColor="red.600"
+			rightIcon="Close"
+			{...args}
+		>
 			Delete
 		</Button>
 	</HStack>

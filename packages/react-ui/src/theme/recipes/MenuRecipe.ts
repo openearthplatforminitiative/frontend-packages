@@ -17,17 +17,23 @@ export const menuRecipe = defineSlotRecipe({
       rounded: "lg",
       minW: "8rem",
       p: 1,
+      outline: "none",
       boxShadow: "1rem 1rem 1rem rgba(0, 0, 0, 0.1)"
     },
     item: {
+      display: "flex",
+      alignItems: "center",
+      gap: 2,
       px: 2,
       py: 1,
       rounded: "lg",
+      cursor: "pointer",
+      colorPalette: "gray",
       _hover: {
-        bg: "gray.100"
+        bg: "colorPalette.100"
       },
       _highlighted: {
-        bg: "gray.100"
+        bg: "colorPalette.100"
       }
     },
     triggerItem: {

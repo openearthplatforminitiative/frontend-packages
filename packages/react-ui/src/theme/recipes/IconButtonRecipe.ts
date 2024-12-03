@@ -86,6 +86,10 @@ export const iconButtonRecipe = defineRecipe({
       },
       plain: {
         color: "colorPalette.fg",
+        outline: "none",
+        _hover: {
+          color: "colorPalette.solid/80",
+        }
       },
     },
     size: {

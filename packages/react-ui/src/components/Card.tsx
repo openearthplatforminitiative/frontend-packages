@@ -19,9 +19,10 @@ interface CardSrcIconProps extends HTMLArkProps<"div"> {
 
 const baseCardSrcIcon = forwardRef<HTMLDivElement, CardSrcIconProps>(
 	(props, ref) => {
+		const { external, ...rest } = props
 		return (
-			<ark.div ref={ref} {...props}>
-				<Icon name={props.external ? "ArrowOutward" : "ArrowForward"} />
+			<ark.div ref={ref} {...rest}>
+				<Icon name={external ? "ArrowOutward" : "ArrowForward"} />
 			</ark.div>
 		)
 	}
@@ -36,10 +37,11 @@ interface CardTitleProps extends HTMLArkProps<"div"> {
 
 const baseCardTitle = forwardRef<HTMLDivElement, CardTitleProps>(
 	(props, ref) => {
+		const { external, ...rest } = props
 		return (
-			<HStack ref={ref} {...props} w="full" justify="space-between">
+			<HStack ref={ref} {...rest} w="full" justify="space-between">
 				{props.children}
-				<CardSrcIcon external={props.external} />
+				<CardSrcIcon external={external} />
 			</HStack>
 		)
 	}

@@ -1236,27 +1236,27 @@ const tokens = {
     "variable": "var(--colors-border-info)"
   },
   "colors.gray.contrast": {
-    "value": "var(--colors-black)",
+    "value": "white",
     "variable": "var(--colors-gray-contrast)"
   },
   "colors.gray.fg": {
-    "value": "var(--colors-gray-950)",
+    "value": "var(--colors-gray-700)",
     "variable": "var(--colors-gray-fg)"
   },
   "colors.gray.subtle": {
-    "value": "var(--colors-gray-50)",
+    "value": "var(--colors-gray-100)",
     "variable": "var(--colors-gray-subtle)"
   },
   "colors.gray.muted": {
-    "value": "var(--colors-gray-100)",
+    "value": "var(--colors-gray-200)",
     "variable": "var(--colors-gray-muted)"
   },
   "colors.gray.emphasized": {
-    "value": "var(--colors-gray-200)",
+    "value": "var(--colors-gray-300)",
     "variable": "var(--colors-gray-emphasized)"
   },
   "colors.gray.solid": {
-    "value": "var(--colors-gray-200)",
+    "value": "var(--colors-gray-700)",
     "variable": "var(--colors-gray-solid)"
   },
   "colors.gray.focusRing": {
@@ -1270,10 +1270,6 @@ const tokens = {
   "colors.primary.fg": {
     "value": "var(--colors-green-700)",
     "variable": "var(--colors-primary-fg)"
-  },
-  "colors.primary.fgc": {
-    "value": "var(--colors-green-900)",
-    "variable": "var(--colors-primary-fgc)"
   },
   "colors.primary.subtle": {
     "value": "var(--colors-green-100)",
@@ -1586,10 +1582,6 @@ const tokens = {
   "colors.colorPalette.focusRing": {
     "value": "var(--colors-color-palette-focus-ring)",
     "variable": "var(--colors-color-palette-focus-ring)"
-  },
-  "colors.colorPalette.fgc": {
-    "value": "var(--colors-color-palette-fgc)",
-    "variable": "var(--colors-color-palette-fgc)"
   }
 }
 

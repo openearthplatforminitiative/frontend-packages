@@ -83,6 +83,7 @@ const meta: Meta<typeof Combobox> = {
 									</ComboboxClearTrigger>
 									<ComboboxTrigger asChild>
 										<IconButton
+											variant="subtle"
 											size="xs"
 											colorPalette="gray"
 											icon={<KeyboardArrowDown />}
@@ -183,6 +184,7 @@ export const MultiSelect: StoryFn<typeof Combobox> = (args) => {
 										</ComboboxClearTrigger>
 										<ComboboxTrigger asChild>
 											<IconButton
+												variant="subtle"
 												size="xs"
 												colorPalette="gray"
 												icon={<KeyboardArrowDown />}
@@ -274,6 +276,7 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
 													</ComboboxClearTrigger>
 													<ComboboxTrigger asChild>
 														<IconButton
+															variant="subtle"
 															size="xs"
 															colorPalette="gray"
 															icon={<KeyboardArrowDown />}

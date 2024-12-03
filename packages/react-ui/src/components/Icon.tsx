@@ -8,17 +8,33 @@ import {
 import { IconVariantProps } from "../styled-system/recipes"
 import { forwardRef } from "react"
 
-type IconProps = HTMLArkProps<"div"> & IconVariantProps & IconComponentProps
+type StaticIconProps = HTMLArkProps<"svg"> & {
+	icon: JSX.Element
+}
 
-const baseIcon = forwardRef<HTMLDivElement, IconProps>((props, ref) => {
-	const { name, filled, ...rest } = props
-	return (
-		<ark.div asChild ref={ref} {...rest}>
-			<IconComponent name={name} filled={filled} />
-		</ark.div>
-	)
+type DynamicIconProps = HTMLArkProps<"svg"> &
+	IconVariantProps &
+	IconComponentProps
+
+type IconProps = StaticIconProps | DynamicIconProps
+
+const baseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
+	if ("icon" in props) {
+		const { icon, ...rest } = props
+		return (
+			<ark.svg asChild ref={ref} {...rest}>
+				{icon}
+			</ark.svg>
+		)
+	} else {
+		const { name, filled, ...rest } = props
+		return (
+			<ark.svg asChild ref={ref} {...rest}>
+				<IconComponent name={name} filled={filled} />
+			</ark.svg>
+		)
+	}
 })
-
 baseIcon.displayName = "Icon"
 
 export const Icon = styled(baseIcon, iconRecipe)

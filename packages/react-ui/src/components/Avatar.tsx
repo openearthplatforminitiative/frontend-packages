@@ -3,8 +3,8 @@ import { avatar } from "../styled-system/recipes/avatar"
 import { forwardRef } from "react"
 import { styled } from "../styled-system/jsx/factory"
 import { cx } from "../styled-system/css/cx"
+import { Person } from "@openepi/icons/icons"
 import { Icon } from "./Icon"
-
 export interface AvatarProps extends ArkAvatar.RootProps {
 	name?: string
 	src?: string
@@ -27,7 +27,7 @@ const baseAvatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
 					props.className
 				)}
 			>
-				{getInitials(name) || <Icon name="Person" />}
+				{getInitials(name) || <Icon icon={<Person />} />}
 			</ArkAvatar.Fallback>
 			<ArkAvatar.Image
 				src={src}

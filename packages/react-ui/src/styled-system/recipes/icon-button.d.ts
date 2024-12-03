@@ -10,7 +10,7 @@ variant: "solid" | "subtle" | "surface" | "outline" | "ghost" | "plain"
 /**
  * @default "md"
  */
-size: "2xs" | "xs" | "sm" | "md" | "lg"
+size: "xs" | "sm" | "md" | "lg"
 /**
  * @default "lg"
  */

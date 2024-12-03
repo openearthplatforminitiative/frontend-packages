@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react"
 import { Button } from "@openepi/react-ui/Button"
 import { IconButton } from "@openepi/react-ui/IconButton"
-import Close from "@openepi/icons/icons/Close"
+import { Close } from "@openepi/icons/icons"
 import {
 	Dialog,
 	DialogBackdrop,
@@ -29,8 +29,13 @@ const meta: Meta<typeof Dialog> = {
 				<DialogBackdrop />
 				<DialogPositioner>
 					<DialogContent>
-						<DialogCloseTrigger>
-							<IconButton icon={<Close />} variant="ghost" size="md" />
+						<DialogCloseTrigger asChild>
+							<IconButton
+								icon={<Close />}
+								colorPalette="gray"
+								variant="ghost"
+								size="md"
+							/>
 						</DialogCloseTrigger>
 						<DialogHeader>
 							<DialogTitle>Dialog Title</DialogTitle>
