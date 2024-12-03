@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryFn, StoryObj } from "@storybook/react"
 import {
 	Card,
 	CardBody,
@@ -33,7 +33,7 @@ export default meta
 
 export const Default: StoryObj<typeof Card> = {}
 
-export const External = (args) => (
+export const External: StoryFn = (args) => (
 	<HStack gap="8" flexWrap="wrap">
 		<Card {...args} external>
 			<CardContent>
@@ -104,7 +104,7 @@ export const External = (args) => (
 	</HStack>
 )
 
-export const WithoutIcon = (args) => (
+export const WithoutIcon: StoryFn = (args) => (
 	<HStack>
 		<Card {...args}>
 			<CardContent>
@@ -119,7 +119,7 @@ export const WithoutIcon = (args) => (
 	</HStack>
 )
 
-export const WithImage = (args) => (
+export const WithImage: StoryFn = (args) => (
 	<HStack>
 		<Card {...args} external>
 			<CardContent>
@@ -166,7 +166,7 @@ export const WithImage = (args) => (
 	</HStack>
 )
 
-export const WithoutDescription = (args) => (
+export const WithoutDescription: StoryFn = (args) => (
 	<VStack>
 		<Card {...args} external>
 			<CardContent>

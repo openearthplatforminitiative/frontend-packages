@@ -25,8 +25,8 @@ export const NotSpinning: StoryFn<typeof Icon> = (args) => (
 export const Spinning: StoryFn<typeof Icon> = (args) => (
 	<Icon
 		fontSize="48px"
-		name={args.name ?? "ProgressActivity"}
 		{...args}
+		name={args.name ?? "ProgressActivity"}
 		animation="spin"
 	/>
 )

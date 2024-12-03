@@ -1,15 +1,13 @@
-import { JsxStyleProps } from "../../styled-system/types"
+import { JsxStyleProps } from "../styled-system/types"
 import { createStyleContext } from "../utils/createStyleContext"
 import { Dialog as ArkDialog, HTMLArkProps } from "@ark-ui/react"
-import { dialog, DialogVariantProps } from "../../styled-system/recipes"
+import { dialog, DialogVariantProps } from "../styled-system/recipes"
 
 const { withRootProvider, withContext } = createStyleContext(dialog)
 
 export const Dialog = withRootProvider<
 	ArkDialog.RootProps & DialogVariantProps
 >(ArkDialog.Root)
-
-Dialog.displayName = "Dialog"
 
 export const DialogBackdrop = withContext<
 	HTMLDivElement,

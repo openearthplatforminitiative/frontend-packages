@@ -1,8 +1,6 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
-import { Field, FieldInput } from "@openepi/react-ui/Field"
+import { Meta, StoryObj } from "@storybook/react"
 import {
 	TagsInput,
-	TagsInputLabel,
 	TagsInputControl,
 	TagsInputInput,
 	TagsInputClearTrigger,
@@ -10,7 +8,6 @@ import {
 	TagsInputHiddenInput,
 } from "@openepi/react-ui/TagsInput"
 import Close from "@openepi/icons/icons/Close"
-import { HStack } from "../styled-system/jsx"
 import {
 	Tag,
 	TagDeleteTrigger,
@@ -22,10 +19,10 @@ import { IconButton } from "@openepi/react-ui/IconButton"
 import { InputGroup } from "@openepi/react-ui/InputGroup"
 
 const meta: Meta<typeof TagsInput> = {
-	title: "Components/TagsInput",
+	title: "Form Components/TagsInput",
 	component: TagsInput,
 	tags: ["autodocs"],
-	render: (args) => (
+	render: () => (
 		<TagsInput max={2} allowOverflow>
 			<TagsInputContext>
 				{(tagsInput) => (
@@ -35,7 +32,7 @@ const meta: Meta<typeof TagsInput> = {
 							rightComponent={
 								<TagsInputClearTrigger asChild>
 									<IconButton
-										size="2xs"
+										size="xs"
 										colorPalette="gray"
 										variant="outline"
 										icon={<Close />}

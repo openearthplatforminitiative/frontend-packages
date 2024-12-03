@@ -21,7 +21,7 @@ const meta: Meta<typeof Dialog> = {
 	component: Dialog,
 	tags: ["autodocs"],
 	render: (args) => (
-		<Dialog>
+		<Dialog {...args}>
 			<DialogTrigger>
 				<Button>Open Dialog</Button>
 			</DialogTrigger>

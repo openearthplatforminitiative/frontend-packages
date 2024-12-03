@@ -7,5 +7,5 @@ export default defineConfig({
   include: ["./src/**/*.{js,jsx,ts,tsx}", "./stories/**/*.{js,jsx,ts,tsx}", "./styled-system/**/*.{js,jsx,ts,tsx}"],
   exclude: [],
   jsxFramework: 'react',
-  outdir: "./styled-system"
+  outdir: "./src/styled-system"
 });

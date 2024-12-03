@@ -1,7 +1,7 @@
 import { ark } from "@ark-ui/react"
-import { HTMLStyledProps, splitCssProps, styled } from "../../styled-system/jsx"
-import { text, TextVariantProps } from "../../styled-system/recipes"
-import { css } from "../../styled-system/css"
+import { HTMLStyledProps, splitCssProps, styled } from "../styled-system/jsx"
+import { text, TextVariantProps } from "../styled-system/recipes"
+import { css } from "../styled-system/css"
 
 type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span"
 

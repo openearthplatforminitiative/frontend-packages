@@ -5,15 +5,14 @@ export const inputGroupRecipe = defineRecipe({
 	jsx: ['InputGroup'],
 	base: {
 		borderRadius: 'lg',
-		display: 'flex',
+		display: 'inline-flex',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		textStyle: 'md',
-		w: 'full',
+		minW: 'md',
 		minH: '11',
-		p: '2',
+		px: '2',
 		gap: '2',
-		mb: '2',
 		bg: "transparent",
 		border: '1px solid',
 		borderColor: 'transparent',
@@ -22,18 +21,11 @@ export const inputGroupRecipe = defineRecipe({
 			outline: '0',
 			outlineWidth: '2px',
 			outlineStyle: 'solid',
-			outlineColor: 'primary.solid/50',
 		},
-		_invalid: {
-			borderColor: 'border.error',
-			_focusWithin: {
-				outlineColor: 'border.error/50',
-			}
-		},
-		'&>*[data-invalid="true"]': {
-			borderColor: 'border.error',
-			_focusWithin: {
-				outlineColor: 'border.error/50',
+		_disabled: {
+			cursor: 'not-allowed',
+			'&>*': {
+				pointerEvents: 'none',
 			}
 		}
 	},
@@ -44,18 +36,16 @@ export const inputGroupRecipe = defineRecipe({
 				_focusWithin: {
 					outlineColor: 'gray.focusRing',
 				},
+				_disabled: {
+					color: 'fg.muted',
+					borderColor: 'border.muted',
+				},
 				_invalid: {
 					borderColor: 'border.error',
 					_focusWithin: {
 						outlineColor: 'border.error/50',
 					}
 				},
-				'&>*[data-invalid="true"]': {
-					borderColor: 'border.error',
-					_focusWithin: {
-						outlineColor: 'border.error/50',
-					}
-				}
 			},
 			filled: {
 				borderColor: 'gray.muted',
@@ -63,18 +53,17 @@ export const inputGroupRecipe = defineRecipe({
 				_focusWithin: {
 					outlineColor: 'gray.focusRing',
 				},
+				_disabled: {
+					color: 'fg.subtle',
+					bg: 'gray.subtle',
+					borderColor: 'border.subtle',
+				},
 				_invalid: {
 					borderColor: 'border.error',
 					_focusWithin: {
 						outlineColor: 'border.error/50',
 					}
 				},
-				'&>*[data-invalid="true"]': {
-					borderColor: 'border.error',
-					_focusWithin: {
-						outlineColor: 'border.error/50',
-					}
-				}
 			}
 		}
 	},

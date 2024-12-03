@@ -44,7 +44,7 @@ import { HStack } from "../../styled-system/jsx"
 const initialItems = ["React", "Solid", "Vue"]
 
 const meta: Meta<typeof Combobox> = {
-	title: "Components/Combobox",
+	title: "Form Components/Combobox",
 	component: Combobox,
 	tags: ["autodocs"],
 	render: (args) => {
@@ -64,8 +64,8 @@ const meta: Meta<typeof Combobox> = {
 			<Field>
 				<FieldLabel>Framework</FieldLabel>
 				<Combobox
+					{...args}
 					openOnClick
-					invalid
 					collection={collection}
 					onInputValueChange={handleInputChange}
 				>
@@ -76,14 +76,14 @@ const meta: Meta<typeof Combobox> = {
 									<ComboboxClearTrigger asChild>
 										<IconButton
 											variant="outline"
-											size="2xs"
+											size="xs"
 											colorPalette="gray"
 											icon={<Close />}
 										/>
 									</ComboboxClearTrigger>
 									<ComboboxTrigger asChild>
 										<IconButton
-											size="2xs"
+											size="xs"
 											colorPalette="gray"
 											icon={<KeyboardArrowDown />}
 										/>
@@ -156,35 +156,45 @@ export const MultiSelect: StoryFn<typeof Combobox> = (args) => {
 		<Field>
 			<FieldLabel>Countries</FieldLabel>
 			<Combobox
+				invalid
+				{...args}
 				openOnClick
 				multiple
 				collection={collection}
 				onInputValueChange={handleInputChange}
 			>
 				<ComboboxControl>
-					<InputGroup
-						rightComponent={
-							<HStack gap={1}>
-								<ComboboxClearTrigger asChild>
-									<IconButton
-										variant="outline"
-										size="2xs"
-										colorPalette="gray"
-										icon={<Close />}
-									/>
-								</ComboboxClearTrigger>
-								<ComboboxTrigger asChild>
-									<IconButton
-										size="2xs"
-										colorPalette="gray"
-										icon={<KeyboardArrowDown />}
-									/>
-								</ComboboxTrigger>
-							</HStack>
-						}
-					>
-						<ComboboxInput />
-					</InputGroup>
+					<ComboboxContext>
+						{(combobox) => (
+							<InputGroup
+								leftComponent={
+									combobox.value.length > 0 &&
+									`${combobox.value.length} Selected`
+								}
+								rightComponent={
+									<HStack gap={1}>
+										<ComboboxClearTrigger asChild>
+											<IconButton
+												variant="outline"
+												size="xs"
+												colorPalette="gray"
+												icon={<Close />}
+											/>
+										</ComboboxClearTrigger>
+										<ComboboxTrigger asChild>
+											<IconButton
+												size="xs"
+												colorPalette="gray"
+												icon={<KeyboardArrowDown />}
+											/>
+										</ComboboxTrigger>
+									</HStack>
+								}
+							>
+								<ComboboxInput />
+							</InputGroup>
+						)}
+					</ComboboxContext>
 				</ComboboxControl>
 				<Portal>
 					<ComboboxPositioner>
@@ -229,7 +239,13 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
 	return (
 		<Field>
 			<FieldLabel>Select Countries</FieldLabel>
-			<Combobox multiple openOnClick allowCustomValue collection={collection}>
+			<Combobox
+				{...args}
+				multiple
+				openOnClick
+				allowCustomValue
+				collection={collection}
+			>
 				<ComboboxContext>
 					{(combobox) => (
 						<ComboboxControl>
@@ -251,14 +267,14 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
 													<ComboboxClearTrigger asChild>
 														<IconButton
 															variant="outline"
-															size="2xs"
+															size="xs"
 															colorPalette="gray"
 															icon={<Close />}
 														/>
 													</ComboboxClearTrigger>
 													<ComboboxTrigger asChild>
 														<IconButton
-															size="2xs"
+															size="xs"
 															colorPalette="gray"
 															icon={<KeyboardArrowDown />}
 														/>
@@ -277,9 +293,6 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
 														</TagPreview>
 													</Tag>
 												))}
-												{/* <ComboboxInput asChild>
-													<TagsInputInput />
-												</ComboboxInput> */}
 												<TagsInputInput asChild>
 													<ComboboxInput />
 												</TagsInputInput>

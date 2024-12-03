@@ -20,7 +20,21 @@
     "postcss": "^8.4.47"
   },
   "exports": {
+    "./preset": {
+      "import": "./dist/theme/index.js",
+      "require": "./dist/theme/index.js"
+    },
+    "./styled-system": {
+      "types": "./dist/styled-system/**/*.d.ts",
+      "import": "./dist/styled-system/**/*.js",
+      "require": "./dist/styled-system/**/*.js"
+    },
+    "./styled-system/styles": {
+      "import": "./dist/styled-system/styles/*.js",
+      "require": "./dist/styled-system/styles/*.js"
+    },
     "./*": {
+      "types": "./dist/components/*.d.ts",
       "import": "./dist/components/*.js",
       "require": "./dist/components/*.js"
     }

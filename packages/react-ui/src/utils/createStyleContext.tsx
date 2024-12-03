@@ -17,8 +17,8 @@ import {
 	type StyledComponent,
 	isCssProperty,
 	styled,
-} from "../../styled-system/jsx"
-import { cx } from "../../styled-system/css"
+} from "../styled-system/jsx"
+import { cx } from "../styled-system/css"
 
 type Props = Record<string, unknown>
 type Recipe = {

@@ -1,43 +1,76 @@
 import { ark } from "@ark-ui/react"
-import { styled } from "../../styled-system/jsx"
-import { inputGroup } from "../../styled-system/recipes"
-import { forwardRef, useRef, cloneElement, ReactElement } from "react"
+import { styled } from "../styled-system/jsx"
+import { inputGroup } from "../styled-system/recipes"
+import {
+	forwardRef,
+	useRef,
+	cloneElement,
+	ReactElement,
+	MutableRefObject,
+	ReactNode,
+	useEffect,
+	useState,
+} from "react"
 
 export type InputGroupProps = {
-	leftComponent?: React.ReactNode
-	rightComponent?: React.ReactNode
+	leftComponent?: ReactNode
+	rightComponent?: ReactNode
 	children: ReactElement
+}
+
+function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]): React.Ref<T> {
+	return (node) => {
+		refs.forEach((ref) => {
+			if (typeof ref === "function") {
+				ref(node)
+			} else if (ref && typeof ref === "object") {
+				;(ref as MutableRefObject<T | null>).current = node
+			}
+		})
+	}
 }
 
 const BaseInputGroup = forwardRef<HTMLDivElement, InputGroupProps>(
 	(props, ref) => {
 		const { leftComponent, rightComponent, children, ...rest } = props
 
-		const childrenRef = useRef<HTMLElement | null>(null)
+		const localRef = useRef<HTMLElement | null>(null)
 
 		const handleClick = () => {
-			if (childrenRef.current) childrenRef.current.click()
+			localRef.current?.focus()
+			localRef.current?.click()
 		}
 
+		const [childIsDisabled, setChildIsDisabled] = useState(false)
+		const [childIsInvalid, setChildIsInvalid] = useState(false)
+
+		useEffect(() => {
+			const updateStates = () => {
+				setChildIsDisabled(localRef.current?.getAttribute("disabled") !== null)
+				setChildIsInvalid(
+					localRef.current?.getAttribute("data-invalid") !== null
+				)
+			}
+
+			updateStates()
+		}, [localRef])
+
 		const clonedChildren = cloneElement(children, {
-			ref: (node: HTMLElement) => {
-				childrenRef.current = node
-				if (typeof children.ref === "function") children.ref(node)
-				else if (children.ref)
-					(children.ref as React.MutableRefObject<HTMLElement | null>).current =
-						node
-			},
+			ref: mergeRefs(children.ref, localRef),
+			style: { flex: 1 },
 		})
 
 		return (
 			<ark.div
 				ref={ref}
 				{...rest}
-				onClick={handleClick} // Delegate the click event
+				onClick={handleClick}
+				{...(childIsDisabled && { "data-disabled": true })}
+				{...(childIsInvalid && { "data-invalid": true })}
 			>
-				{leftComponent && <ark.div>{leftComponent}</ark.div>}
-				{clonedChildren} {/* Inject the ref directly into children */}
-				{rightComponent && <ark.div>{rightComponent}</ark.div>}
+				{leftComponent && leftComponent}
+				{clonedChildren}
+				{rightComponent && rightComponent}
 			</ark.div>
 		)
 	}
@@ -46,3 +79,5 @@ const BaseInputGroup = forwardRef<HTMLDivElement, InputGroupProps>(
 BaseInputGroup.displayName = "InputGroup"
 
 export const InputGroup = styled(BaseInputGroup, inputGroup)
+
+InputGroup.displayName = "InputGroup"

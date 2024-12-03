@@ -1,9 +1,9 @@
 import { Menu as ArkMenu, Portal } from "@ark-ui/react"
 import { createStyleContext } from "../utils/createStyleContext"
-import { menu, MenuVariantProps } from "../../styled-system/recipes"
-import { JsxStyleProps } from "../../styled-system/types"
+import { menu, MenuVariantProps } from "../styled-system/recipes"
+import { JsxStyleProps } from "../styled-system/types"
 import { forwardRef, ReactNode } from "react"
-import { IconName } from "packages/icons/dist"
+import { IconName } from "@openepi/icons"
 import { Icon } from "./Icon"
 
 const { withRootProvider, withContext } = createStyleContext(menu)

@@ -5,6 +5,9 @@ export const comboboxRecipe = defineSlotRecipe({
 	className: "combobox",
 	slots: comboboxAnatomy.keys(),
 	base: {
+		root: {
+			display: "inline-flex",
+		},
 		content: {
 			bg: "bg",
 			border: "1px solid",
@@ -12,7 +15,7 @@ export const comboboxRecipe = defineSlotRecipe({
 			display: "flex",
 			flexDirection: "column",
 			gap: 2,
-			maxH: "md",
+			maxH: "sm",
 			overflowY: "auto",
 			rounded: "lg",
 			minW: "8rem",
@@ -41,8 +44,7 @@ export const comboboxRecipe = defineSlotRecipe({
 			},
 		},
 		input: {
-				outline: 0,
-				textStyle: "sm",
+			outline: 0,
 		},
 		item: {
 			display: "flex",

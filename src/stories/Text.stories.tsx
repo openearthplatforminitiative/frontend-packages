@@ -12,7 +12,6 @@ const meta: Meta<typeof Text> = {
 			description: "The design variant to be applied",
 			options: ["h1", "h2", "h3", "h4", "h5", "h6", "p", "span"],
 		},
-		// @ts-ignore
 		as: {
 			control: "select",
 			description: "The HTML element to be rendered",
@@ -34,7 +33,7 @@ export default meta
 
 export const Default: StoryObj<typeof Text> = {}
 
-export const AllVariants: StoryFn<typeof Text> = (args) => (
+export const AllVariants: StoryFn<typeof Text> = () => (
 	<VStack gap="8" alignItems="start">
 		<Text variant="h1">Heading 1</Text>
 		<Text variant="h2">Heading 2</Text>

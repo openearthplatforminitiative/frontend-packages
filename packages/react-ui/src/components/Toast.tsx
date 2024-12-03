@@ -6,8 +6,8 @@ import {
 } from "@ark-ui/react"
 import { createStyleContext } from "../utils/createStyleContext"
 import { CreateToasterProps } from "@ark-ui/react"
-import { toast } from "../../styled-system/recipes"
-import { JsxStyleProps } from "../../styled-system/types"
+import { toast } from "../styled-system/recipes"
+import { JsxStyleProps } from "../styled-system/types"
 import { forwardRef } from "react"
 
 export const createToaster = (props: CreateToasterProps) =>

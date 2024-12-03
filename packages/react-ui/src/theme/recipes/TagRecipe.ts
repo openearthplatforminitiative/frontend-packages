@@ -7,10 +7,13 @@ export const tagRecipe = defineSlotRecipe({
   base: {
     preview: {
       display: "inline-flex",
+      alignItems: "center",
       border: "solid 1px",
       borderColor: "border",
       borderRadius: "lg",
-      p: "1",
+      h: "6",
+      py: "0.5",
+      px: "1",
       gap: "1",
       textStyle: "sm",
       _highlighted: {

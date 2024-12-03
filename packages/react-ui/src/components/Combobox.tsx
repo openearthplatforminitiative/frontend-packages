@@ -1,11 +1,9 @@
 import { Combobox as ArkCombobox } from "@ark-ui/react"
 import { createStyleContext } from "../utils/createStyleContext"
-import { combobox, ComboboxVariantProps } from "../../styled-system/recipes"
-import { JsxStyleProps } from "../../styled-system/types"
+import { combobox, ComboboxVariantProps } from "../styled-system/recipes"
+import { JsxStyleProps } from "../styled-system/types"
 
 const { withProvider, withContext } = createStyleContext(combobox)
-// input" | "label" | "root" | "content" | "list" | "trigger" | "positioner" |
-// "control" | "clearTrigger" | "item" | "itemGroup" | "itemGroupLabel" | "itemIndicator" | "itemText"
 
 export type ComboboxRootProps<T extends ArkCombobox.CollectionItem> =
 	JsxStyleProps & ArkCombobox.RootProps<T> & ComboboxVariantProps
@@ -16,6 +14,8 @@ export const Combobox = withProvider<
 		ComboboxRootProps<ArkCombobox.CollectionItem> &
 		ComboboxVariantProps
 >(ArkCombobox.Root, "root")
+
+Combobox.displayName = "Combobox"
 
 export const ComboboxContent = withContext<
 	HTMLDivElement,

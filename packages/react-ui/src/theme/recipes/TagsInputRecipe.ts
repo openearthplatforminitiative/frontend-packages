@@ -11,22 +11,17 @@ export const tagsInputRecipe = defineSlotRecipe({
     },
     control: {
       display: "flex",
+      alignItems: "center",
       flexWrap: "wrap",
       flex: "1",
       gap: "1",
     },
     input: {
-      outline: 0,
-      flex: "1",
-      p: "1",
+      outline: 0
     },
     clearTrigger: {
       justifySelf: "flex-end",
       ml: "auto"
-    },
-    itemInput: {
-      outline: 0,
-      textStyle: "sm",
-    },
-  },
+    }
+  }
 })

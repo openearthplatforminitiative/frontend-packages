@@ -89,17 +89,11 @@ export const iconButtonRecipe = defineRecipe({
       },
     },
     size: {
-      "2xs": {
-        h: "8",
-        w: "8",
-        p: "2",
-        textStyle: "sm",
-      },
       xs: {
-        h: "9",
-        w: "9",
-        p: "2",
-        textStyle: "sm",
+        h: "6",
+        w: "6",
+        p: "0.5",
+        textStyle: "md",
       },
       sm: {
         h: "10",

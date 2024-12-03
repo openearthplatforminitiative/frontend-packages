@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from "react"
-import { styled } from "../../styled-system/jsx"
-import { button } from "../../styled-system/recipes/button"
+import { styled } from "../styled-system/jsx"
+import { button } from "../styled-system/recipes/button"
 import { ark, HTMLArkProps } from "@ark-ui/react"
 import { Icon } from "./Icon"
 import { IconName } from "@openepi/icons"
