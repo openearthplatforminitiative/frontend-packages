@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgOxygenSaturationFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

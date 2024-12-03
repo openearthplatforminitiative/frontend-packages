@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgTonalityFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

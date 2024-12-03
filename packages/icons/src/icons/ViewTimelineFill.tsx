@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgViewTimelineFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

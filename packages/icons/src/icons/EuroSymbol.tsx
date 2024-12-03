@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgEuroSymbol = (props: SVGProps<SVGSVGElement>) => (
 	<svg

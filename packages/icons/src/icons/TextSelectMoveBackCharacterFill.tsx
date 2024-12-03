@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgTextSelectMoveBackCharacterFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

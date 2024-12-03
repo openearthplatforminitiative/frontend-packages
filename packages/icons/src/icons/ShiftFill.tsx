@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgShiftFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

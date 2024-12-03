@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgSplitscreenTop = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgSwipeLeft = (props: SVGProps<SVGSVGElement>) => (
 	<svg

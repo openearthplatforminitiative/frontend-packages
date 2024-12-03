@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgMarginFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgSensorsKrxOff = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgViewCarouselFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

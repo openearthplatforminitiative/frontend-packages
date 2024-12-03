@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgPianoOffFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

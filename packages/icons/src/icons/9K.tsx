@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const Svg9K = (props: SVGProps<SVGSVGElement>) => (
 	<svg

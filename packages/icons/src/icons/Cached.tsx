@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgCached = (props: SVGProps<SVGSVGElement>) => (
 	<svg

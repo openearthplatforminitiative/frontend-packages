@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgFindInPage = (props: SVGProps<SVGSVGElement>) => (
 	<svg

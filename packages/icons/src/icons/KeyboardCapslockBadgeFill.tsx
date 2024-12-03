@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgKeyboardCapslockBadgeFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgFolderSupervisedFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

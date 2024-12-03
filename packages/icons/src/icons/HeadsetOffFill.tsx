@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgHeadsetOffFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

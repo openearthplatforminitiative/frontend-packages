@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgHotelClassFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

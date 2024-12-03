@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgWallpaperSlideshowFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgLineEndArrowNotchFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

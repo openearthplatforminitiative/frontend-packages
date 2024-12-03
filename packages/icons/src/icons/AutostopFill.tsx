@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgAutostopFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

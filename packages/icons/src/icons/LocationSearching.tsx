@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgLocationSearching = (props: SVGProps<SVGSVGElement>) => (
 	<svg

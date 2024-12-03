@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgNetworkWifi2BarFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

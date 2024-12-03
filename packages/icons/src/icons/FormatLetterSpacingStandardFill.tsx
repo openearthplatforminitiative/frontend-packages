@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgFormatLetterSpacingStandardFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgDomainDisabled = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgRoundedCornerFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

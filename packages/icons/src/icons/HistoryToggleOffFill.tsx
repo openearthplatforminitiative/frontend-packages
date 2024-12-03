@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgHistoryToggleOffFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

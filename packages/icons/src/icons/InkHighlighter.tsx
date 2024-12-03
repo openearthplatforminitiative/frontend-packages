@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgInkHighlighter = (props: SVGProps<SVGSVGElement>) => (
 	<svg

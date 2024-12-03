@@ -1,5 +1,5 @@
 import { IconName } from "./index"
-import DefaultIcon from "./icons/Help"
+import { Help as DefaultIcon } from "./icons"
 import type { SVGProps } from "react"
 import { lazy, Suspense } from "react"
 

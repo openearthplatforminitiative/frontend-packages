@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgNestMini = (props: SVGProps<SVGSVGElement>) => (
 	<svg

@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgNestCamIq = (props: SVGProps<SVGSVGElement>) => (
 	<svg

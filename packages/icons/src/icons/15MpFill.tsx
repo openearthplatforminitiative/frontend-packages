@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const Svg15MpFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

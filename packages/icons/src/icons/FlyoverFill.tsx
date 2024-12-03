@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgFlyoverFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

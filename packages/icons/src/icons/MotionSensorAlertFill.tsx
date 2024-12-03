@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgMotionSensorAlertFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

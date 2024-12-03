@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgSpeed175Fill = (props: SVGProps<SVGSVGElement>) => (
 	<svg

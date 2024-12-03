@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgClockLoader20 = (props: SVGProps<SVGSVGElement>) => (
 	<svg

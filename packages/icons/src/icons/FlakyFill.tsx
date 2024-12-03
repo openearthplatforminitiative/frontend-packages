@@ -1,4 +1,3 @@
-import * as React from "react"
 import type { SVGProps } from "react"
 const SvgFlakyFill = (props: SVGProps<SVGSVGElement>) => (
 	<svg
