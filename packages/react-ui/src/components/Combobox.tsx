@@ -1,7 +1,7 @@
 import { Combobox as ArkCombobox } from "@ark-ui/react"
 import { createStyleContext } from "../utils/createStyleContext"
-import { combobox, ComboboxVariantProps } from "../styled-system/recipes"
-import { JsxStyleProps } from "../styled-system/types"
+import { combobox, ComboboxVariantProps } from "../../styled-system/recipes"
+import { JsxStyleProps } from "../../styled-system/types"
 
 const { withProvider, withContext } = createStyleContext(combobox)
 

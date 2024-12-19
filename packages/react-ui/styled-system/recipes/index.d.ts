@@ -12,6 +12,7 @@ export * from './avatar';
 export * from './card';
 export * from './combobox';
 export * from './dialog';
+export * from './drawer';
 export * from './field';
 export * from './menu';
 export * from './tag';

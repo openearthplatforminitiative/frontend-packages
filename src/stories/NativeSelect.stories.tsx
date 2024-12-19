@@ -6,8 +6,8 @@ import {
 	FieldLabel,
 } from "@openepi/react-ui/Field"
 import { NativeSelect } from "@openepi/react-ui/NativeSelect"
-import Mail from "@openepi/icons/icons/Mail"
-import Visibility from "@openepi/icons/icons/Visibility"
+import { Mail } from "@openepi/icons/icons"
+import { Visibility } from "@openepi/icons/icons"
 import { InputGroup } from "@openepi/react-ui/InputGroup"
 import { Stack } from "../../styled-system/jsx"
 import { IconButton } from "@openepi/react-ui/IconButton"

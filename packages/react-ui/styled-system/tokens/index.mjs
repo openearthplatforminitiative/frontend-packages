@@ -1127,6 +1127,58 @@ const tokens = {
     "value": "9999px",
     "variable": "var(--radii-full)"
   },
+  "zIndex.hide": {
+    "value": -1,
+    "variable": "var(--z-index-hide)"
+  },
+  "zIndex.base": {
+    "value": 0,
+    "variable": "var(--z-index-base)"
+  },
+  "zIndex.docked": {
+    "value": 10,
+    "variable": "var(--z-index-docked)"
+  },
+  "zIndex.dropdown": {
+    "value": 1000,
+    "variable": "var(--z-index-dropdown)"
+  },
+  "zIndex.sticky": {
+    "value": 1100,
+    "variable": "var(--z-index-sticky)"
+  },
+  "zIndex.banner": {
+    "value": 1200,
+    "variable": "var(--z-index-banner)"
+  },
+  "zIndex.overlay": {
+    "value": 1300,
+    "variable": "var(--z-index-overlay)"
+  },
+  "zIndex.modal": {
+    "value": 1400,
+    "variable": "var(--z-index-modal)"
+  },
+  "zIndex.popover": {
+    "value": 1500,
+    "variable": "var(--z-index-popover)"
+  },
+  "zIndex.skipNav": {
+    "value": 1600,
+    "variable": "var(--z-index-skip-nav)"
+  },
+  "zIndex.toast": {
+    "value": 1700,
+    "variable": "var(--z-index-toast)"
+  },
+  "zIndex.tooltip": {
+    "value": 1800,
+    "variable": "var(--z-index-tooltip)"
+  },
+  "zIndex.max": {
+    "value": 2147483647,
+    "variable": "var(--z-index-max)"
+  },
   "colors.bg": {
     "value": "var(--colors-white)",
     "variable": "var(--colors-bg)"
@@ -1346,6 +1398,34 @@ const tokens = {
   "colors.tertiary.focusRing": {
     "value": "var(--colors-cyan-600)",
     "variable": "var(--colors-tertiary-focus-ring)"
+  },
+  "colors.error.contrast": {
+    "value": "white",
+    "variable": "var(--colors-error-contrast)"
+  },
+  "colors.error.fg": {
+    "value": "var(--colors-red-700)",
+    "variable": "var(--colors-error-fg)"
+  },
+  "colors.error.subtle": {
+    "value": "var(--colors-red-100)",
+    "variable": "var(--colors-error-subtle)"
+  },
+  "colors.error.muted": {
+    "value": "var(--colors-red-200)",
+    "variable": "var(--colors-error-muted)"
+  },
+  "colors.error.emphasized": {
+    "value": "var(--colors-red-300)",
+    "variable": "var(--colors-error-emphasized)"
+  },
+  "colors.error.solid": {
+    "value": "var(--colors-red-700)",
+    "variable": "var(--colors-error-solid)"
+  },
+  "colors.error.focusRing": {
+    "value": "var(--colors-red-600)",
+    "variable": "var(--colors-error-focus-ring)"
   },
   "spacing.-1": {
     "value": "calc(var(--spacing-1) * -1)",

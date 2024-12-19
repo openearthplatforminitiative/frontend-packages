@@ -17,26 +17,47 @@
     "@pandacss/dev": "^0.47.1",
     "@types/lodash": "^4.17.13",
     "@types/react": "^18.3.12",
+    "esbuild": "^0.24.0",
     "postcss": "^8.4.47"
   },
   "exports": {
     "./preset": {
-      "import": "./dist/theme/index.js",
-      "require": "./dist/theme/index.js"
+      "types": "./dist/preset/index.d.ts",
+      "default": "./dist/theme/index.js"
     },
-    "./styled-system": {
-      "types": "./dist/styled-system/**/*.d.ts",
-      "import": "./dist/styled-system/**/*.js",
-      "require": "./dist/styled-system/**/*.js"
+    "./styled-system/css": {
+      "types": "./styled-system/css/index.d.ts",
+      "require": "./styled-system/css/index.mjs",
+      "import": "./css/index.mjs"
     },
-    "./styled-system/styles": {
-      "import": "./dist/styled-system/styles/*.js",
-      "require": "./dist/styled-system/styles/*.js"
+    "./styled-system/tokens": {
+      "types": "./styled-system/tokens/index.d.ts",
+      "require": "./styled-system/tokens/index.mjs",
+      "import": "./styled-system/tokens/index.mjs"
+    },
+    "./styled-system/types": {
+      "types": "./styled-system/types/index.d.ts",
+      "require": "./styled-system/types/index.mjs",
+      "import": "./styled-system/types/index.mjs"
+    },
+    "./styled-system/patterns": {
+      "types": "./styled-system/patterns/index.d.ts",
+      "require": "./styled-system/patterns/index.mjs",
+      "import": "./styled-system/patterns/index.mjs"
+    },
+    "./styled-system/recipes": {
+      "types": "./styled-system/recipes/index.d.ts",
+      "require": "./styled-system/recipes/index.mjs",
+      "import": "./styled-system/recipes/index.mjs"
+    },
+    "./styled-system/jsx": {
+      "types": "./styled-system/jsx/index.d.ts",
+      "require": "./styled-system/jsx/index.mjs",
+      "import": "./styled-system/jsx/index.mjs"
     },
     "./*": {
       "types": "./dist/components/*.d.ts",
-      "import": "./dist/components/*.js",
-      "require": "./dist/components/*.js"
+      "default": "./dist/components/*.js"
     }
   }
 }

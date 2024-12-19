@@ -17,8 +17,8 @@ import {
 	type StyledComponent,
 	isCssProperty,
 	styled,
-} from "../styled-system/jsx"
-import { cx } from "../styled-system/css"
+} from "../../styled-system/jsx"
+import { cx } from "../../styled-system/css"
 
 type Props = Record<string, unknown>
 type Recipe = {
@@ -80,9 +80,6 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
 				</StyleContext.Provider>
 			)
 		})
-		// @ts-expect-error
-		StyledSlotProvider.displayName = Component.displayName || Component.name
-
 		return StyledSlotProvider
 	}
 
@@ -101,9 +98,6 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
 				/>
 			)
 		})
-		// @ts-expect-error
-		StyledSlotComponent.displayName = Component.displayName || Component.name
-
 		return StyledSlotComponent
 	}
 

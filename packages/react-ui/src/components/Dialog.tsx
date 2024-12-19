@@ -1,7 +1,8 @@
-import { JsxStyleProps } from "../styled-system/types"
+import { JsxStyleProps } from "../../styled-system/types"
 import { createStyleContext } from "../utils/createStyleContext"
 import { Dialog as ArkDialog, HTMLArkProps } from "@ark-ui/react"
-import { dialog, DialogVariantProps } from "../styled-system/recipes"
+import { dialog, DialogVariantProps } from "../../styled-system/recipes"
+import { forwardRef } from "react"
 
 const { withRootProvider, withContext } = createStyleContext(dialog)
 
@@ -55,12 +56,33 @@ export const DialogContent = withContext<
 	JsxStyleProps & ArkDialog.ContentProps
 >(ArkDialog.Content, "content")
 
-export const DialogCloseTrigger = withContext<
+const baseDialogWrapper = forwardRef<
 	HTMLDivElement,
+	JsxStyleProps & ArkDialog.ContentProps
+>((props, ref) => {
+	return (
+		<>
+			<DialogBackdrop />
+			<DialogPositioner>
+				<DialogContent ref={ref} {...props} />
+			</DialogPositioner>
+		</>
+	)
+})
+
+baseDialogWrapper.displayName = "DialogWrapper"
+
+export const DialogWrapper = withContext<
+	HTMLDivElement,
+	JsxStyleProps & ArkDialog.ContentProps
+>(baseDialogWrapper, "content")
+
+export const DialogCloseTrigger = withContext<
+	HTMLButtonElement,
 	JsxStyleProps & ArkDialog.CloseTriggerProps
 >(ArkDialog.CloseTrigger, "closeTrigger")
 
 export const DialogTrigger = withContext<
-	HTMLDivElement,
+	HTMLButtonElement,
 	JsxStyleProps & ArkDialog.TriggerProps
 >(ArkDialog.Trigger, "trigger")

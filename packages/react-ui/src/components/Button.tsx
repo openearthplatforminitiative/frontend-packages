@@ -1,6 +1,6 @@
 import { forwardRef, ReactNode } from "react"
-import { styled } from "../styled-system/jsx"
-import { button } from "../styled-system/recipes/button"
+import { styled } from "../../styled-system/jsx"
+import { button } from "../../styled-system/recipes/button"
 import { ark, HTMLArkProps } from "@ark-ui/react"
 import { Icon } from "./Icon"
 import { IconName } from "@openepi/icons"
@@ -32,7 +32,7 @@ type ButtonProps = HTMLArkProps<"button"> &
 		children: ReactNode
 	}
 
-const baseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const BaseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 	const {
 		loading,
 		disabled,
@@ -45,12 +45,12 @@ const baseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 	} = props
 	return (
 		<ark.button
-			tabIndex={0}
 			ref={ref}
-			{...rest}
+			tabIndex={0}
 			data-loading={loading ? loading : undefined}
 			disabled={disabled ? disabled : false}
 			data-active={active ? active : undefined}
+			{...rest}
 		>
 			{loading ? (
 				<Icon animation="spin" name="ProgressActivity" />
@@ -69,8 +69,14 @@ const baseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 	)
 })
 
-baseButton.displayName = "BaseButton"
+BaseButton.displayName = "BaseButton"
 
-export const Button = styled(baseButton, button)
+const something = () => (
+	<BaseButton onClick={(e) => console.log(e)}>Hei</BaseButton>
+)
+
+export const Button = styled(BaseButton, button)
+
+const elser = () => <Button onClick={(e) => console.log(e)}>Hei</Button>
 
 Button.displayName = "Button"

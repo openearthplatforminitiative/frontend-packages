@@ -1,7 +1,7 @@
-import { JsxStyleProps } from "../styled-system/types"
+import { JsxStyleProps } from "../../styled-system/types"
 import { createStyleContext } from "../utils/createStyleContext"
 import { TagsInput as ArkTagsInput } from "@ark-ui/react"
-import { tagsInput, TagsInputVariantProps } from "../styled-system/recipes"
+import { tagsInput, TagsInputVariantProps } from "../../styled-system/recipes"
 
 const { withProvider, withContext } = createStyleContext(tagsInput)
 
@@ -32,29 +32,29 @@ export const TagsInputClearTrigger = withContext<
 	JsxStyleProps & ArkTagsInput.ClearTriggerProps
 >(ArkTagsInput.ClearTrigger, "clearTrigger")
 
-// export const Tag = withContext<
-// 	HTMLDivElement,
-// 	JsxStyleProps & ArkTagsInput.ItemProps
-// >(ArkTagsInput.Item, "item")
+export const TagsInputItem = withContext<
+	HTMLDivElement,
+	JsxStyleProps & ArkTagsInput.ItemProps
+>(ArkTagsInput.Item, "item")
 
-// export const TagPreview = withContext<
-// 	HTMLDivElement,
-// 	JsxStyleProps & ArkTagsInput.ItemPreviewProps
-// >(ArkTagsInput.ItemPreview, "itemPreview")
+export const TagsInputItemPreview = withContext<
+	HTMLDivElement,
+	JsxStyleProps & ArkTagsInput.ItemPreviewProps
+>(ArkTagsInput.ItemPreview, "itemPreview")
 
-// export const TagInput = withContext<
-// 	HTMLInputElement,
-// 	JsxStyleProps & ArkTagsInput.ItemInputProps
-// >(ArkTagsInput.ItemInput, "itemInput")
+export const TagsInputItemInput = withContext<
+	HTMLInputElement,
+	JsxStyleProps & ArkTagsInput.ItemInputProps
+>(ArkTagsInput.ItemInput, "itemInput")
 
-// export const TagText = withContext<
-// 	HTMLDivElement,
-// 	JsxStyleProps & ArkTagsInput.ItemTextProps
-// >(ArkTagsInput.ItemText, "itemText")
+export const TagsInputItemText = withContext<
+	HTMLDivElement,
+	JsxStyleProps & ArkTagsInput.ItemTextProps
+>(ArkTagsInput.ItemText, "itemText")
 
-// export const TagDeleteTrigger = withContext<
-// 	HTMLDivElement,
-// 	JsxStyleProps & ArkTagsInput.ItemDeleteTriggerProps
-// >(ArkTagsInput.ItemDeleteTrigger, "itemDeleteTrigger")
+export const TagsInputItemDeleteTrigger = withContext<
+	HTMLDivElement,
+	JsxStyleProps & ArkTagsInput.ItemDeleteTriggerProps
+>(ArkTagsInput.ItemDeleteTrigger, "itemDeleteTrigger")
 
 export const TagsInputHiddenInput = ArkTagsInput.HiddenInput

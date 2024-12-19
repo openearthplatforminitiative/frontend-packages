@@ -19,6 +19,13 @@ const meta: Meta<typeof InputGroup> = {
 	title: "Form Components/InputGroup",
 	component: InputGroup,
 	tags: ["autodocs"],
+	argTypes: {
+		variant: {
+			control: "select",
+			options: ["outline", "filled"],
+			default: "outline",
+		},
+	},
 	render: (args) => (
 		<InputGroup {...args} leftComponent={<Mail />}>
 			<Input variant="unstyled" placeholder="someone@example.com" />
@@ -53,6 +60,7 @@ export const Grouped: StoryFn<typeof InputGroup> = (args) => {
 						onClick={() => setShowPassword(!showPassword)}
 					/>
 				}
+				{...args}
 			>
 				<Input
 					variant="unstyled"
@@ -68,6 +76,7 @@ export const Grouped: StoryFn<typeof InputGroup> = (args) => {
 						<option>GBP</option>
 					</NativeSelect>
 				}
+				{...args}
 			>
 				<Input
 					variant="unstyled"

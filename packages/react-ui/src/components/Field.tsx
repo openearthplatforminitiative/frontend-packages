@@ -1,7 +1,7 @@
 import { Field as ArkField } from "@ark-ui/react"
 import { createStyleContext } from "../utils/createStyleContext"
-import { field } from "../styled-system/recipes"
-import { JsxStyleProps } from "../styled-system/types"
+import { field } from "../../styled-system/recipes"
+import { JsxStyleProps } from "../../styled-system/types"
 
 const { withProvider, withContext } = createStyleContext(field)
 

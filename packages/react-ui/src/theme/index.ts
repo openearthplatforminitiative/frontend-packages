@@ -11,6 +11,7 @@ import { fontSizes } from "./tokens/fontSizes";
 import { sizes } from "./tokens/sizes";
 import { radii } from "./tokens/radius";
 import { keyframes } from "./tokens/keyframes";
+import { zIndices } from "./tokens/zIndices";
 
 export const preset = definePreset({
   name: "openepi/react-ui",
@@ -26,6 +27,7 @@ export const preset = definePreset({
         fontSizes: fontSizes,
         sizes: sizes,
         radii: radii,
+        zIndex: zIndices,
       },
       keyframes: keyframes,
       textStyles: textStyles,

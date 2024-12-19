@@ -4,6 +4,7 @@ import type { CssProperties } from './system-types';
 import type { Tokens } from '../tokens/index';
 
 export interface UtilityValues {
+	zIndex: Tokens["zIndex"];
 	top: Tokens["spacing"];
 	left: Tokens["spacing"];
 	inset: "auto" | Tokens["spacing"];
@@ -120,7 +121,7 @@ export interface UtilityValues {
 	borderSpacingX: Tokens["spacing"];
 	borderSpacingY: Tokens["spacing"];
 	transition: "all" | "common" | "background" | "colors" | "opacity" | "shadow" | "transform";
-	animationName: "spin" | "fadeIn" | "fadeOut" | "scaleIn" | "scaleOut";
+	animationName: "spin" | "pulse" | "ping" | "bounce" | "bg-position" | "position" | "circular-progress" | "expand-height" | "collapse-height" | "expand-width" | "collapse-width" | "fade-in" | "fade-out" | "slide-from-left-full" | "slide-from-right-full" | "slide-from-top-full" | "slide-from-bottom-full" | "slide-to-left-full" | "slide-to-right-full" | "slide-to-top-full" | "slide-to-bottom-full" | "slide-from-top" | "slide-from-bottom" | "slide-from-left" | "slide-from-right" | "slide-to-top" | "slide-to-bottom" | "slide-to-left" | "slide-to-right" | "scale-in" | "scale-out";
 	rotate: "auto" | "auto-3d" | CssProperties["rotate"];
 	rotateX: CssProperties["rotate"];
 	rotateY: CssProperties["rotate"];
@@ -170,7 +171,7 @@ export interface UtilityValues {
 	srOnly: boolean;
 	debug: boolean;
 	containerName: CssProperties["containerName"];
-	colorPalette: "transparent" | "current" | "black" | "white" | "whiteAlpha" | "blackAlpha" | "gray" | "red" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "purple" | "pink" | "bg" | "fg" | "border" | "primary" | "secondary" | "tertiary";
+	colorPalette: "transparent" | "current" | "black" | "white" | "whiteAlpha" | "blackAlpha" | "gray" | "red" | "orange" | "yellow" | "green" | "teal" | "blue" | "cyan" | "purple" | "pink" | "bg" | "fg" | "border" | "primary" | "secondary" | "tertiary" | "error";
 	textStyle: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "none";
 }
 

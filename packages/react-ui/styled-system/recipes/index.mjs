@@ -11,6 +11,7 @@ export * from './avatar.mjs';
 export * from './card.mjs';
 export * from './combobox.mjs';
 export * from './dialog.mjs';
+export * from './drawer.mjs';
 export * from './field.mjs';
 export * from './menu.mjs';
 export * from './tag.mjs';

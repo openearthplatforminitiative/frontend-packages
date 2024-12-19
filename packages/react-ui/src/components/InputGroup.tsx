@@ -1,6 +1,6 @@
 import { ark } from "@ark-ui/react"
-import { styled } from "../styled-system/jsx"
-import { inputGroup } from "../styled-system/recipes"
+import { styled } from "../../styled-system/jsx"
+import { inputGroup } from "../../styled-system/recipes"
 import {
 	forwardRef,
 	useRef,
@@ -63,10 +63,10 @@ const BaseInputGroup = forwardRef<HTMLDivElement, InputGroupProps>(
 		return (
 			<ark.div
 				ref={ref}
-				{...rest}
 				onClick={handleClick}
 				{...(childIsDisabled && { "data-disabled": true })}
 				{...(childIsInvalid && { "data-invalid": true })}
+				{...rest}
 			>
 				{leftComponent && leftComponent}
 				{clonedChildren}

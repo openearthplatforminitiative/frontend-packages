@@ -3,7 +3,6 @@ import { createRecipe } from './create-recipe.mjs';
 
 const dialogDefaultVariants = {
   "size": "md",
-  "scrollBehavior": "outside",
   "placement": "top",
   "motionPreset": "scale"
 }
@@ -47,6 +46,10 @@ const dialogSlotNames = [
     "dialog__body"
   ],
   [
+    "wrapper",
+    "dialog__wrapper"
+  ],
+  [
     "footer",
     "dialog__footer"
   ],
@@ -63,7 +66,6 @@ const dialogFn = memo((props = {}) => {
 
 const dialogVariantKeys = [
   "placement",
-  "scrollBehavior",
   "size",
   "motionPreset"
 ]
@@ -79,10 +81,6 @@ export const dialog = /* @__PURE__ */ Object.assign(dialogFn, {
     "center",
     "top",
     "bottom"
-  ],
-  "scrollBehavior": [
-    "inside",
-    "outside"
   ],
   "size": [
     "xs",

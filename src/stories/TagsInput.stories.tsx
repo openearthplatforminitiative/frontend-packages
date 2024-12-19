@@ -6,15 +6,14 @@ import {
 	TagsInputClearTrigger,
 	TagsInputContext,
 	TagsInputHiddenInput,
+	TagsInputItem,
+	TagsInputItemDeleteTrigger,
+	TagsInputItemInput,
+	TagsInputItemPreview,
+	TagsInputItemText,
 } from "@openepi/react-ui/TagsInput"
-import Close from "@openepi/icons/icons/Close"
-import {
-	Tag,
-	TagDeleteTrigger,
-	TagInput,
-	TagPreview,
-	TagText,
-} from "@openepi/react-ui/Tag"
+import { Close } from "@openepi/icons/icons"
+import {} from "@openepi/react-ui/Tag"
 import { IconButton } from "@openepi/react-ui/IconButton"
 import { InputGroup } from "@openepi/react-ui/InputGroup"
 
@@ -42,15 +41,15 @@ const meta: Meta<typeof TagsInput> = {
 						>
 							<TagsInputControl>
 								{tagsInput.value.map((value, index) => (
-									<Tag key={index} index={index} value={value}>
-										<TagPreview>
-											<TagText>{value}</TagText>
-											<TagDeleteTrigger>
+									<TagsInputItem key={index} index={index} value={value}>
+										<TagsInputItemPreview>
+											<TagsInputItemText>{value}</TagsInputItemText>
+											<TagsInputItemDeleteTrigger>
 												<Close />
-											</TagDeleteTrigger>
-										</TagPreview>
-										<TagInput />
-									</Tag>
+											</TagsInputItemDeleteTrigger>
+										</TagsInputItemPreview>
+										<TagsInputItemInput />
+									</TagsInputItem>
 								))}
 								<TagsInputInput placeholder="Add Framework" />
 							</TagsInputControl>

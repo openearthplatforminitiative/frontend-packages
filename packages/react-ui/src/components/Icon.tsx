@@ -1,11 +1,11 @@
-import { styled } from "../styled-system/jsx"
-import { icon as iconRecipe } from "../styled-system/recipes"
+import { styled } from "../../styled-system/jsx"
+import { icon as iconRecipe } from "../../styled-system/recipes"
 import { ark, HTMLArkProps } from "@ark-ui/react"
 import {
 	Icon as IconComponent,
 	IconProps as IconComponentProps,
 } from "@openepi/icons"
-import { IconVariantProps } from "../styled-system/recipes"
+import { IconVariantProps } from "../../styled-system/recipes"
 import { forwardRef } from "react"
 
 type StaticIconProps = HTMLArkProps<"svg"> & {

@@ -27,13 +27,11 @@ import {
 	TagsInputContext,
 	TagsInputControl,
 	TagsInputInput,
+	TagsInputItem,
+	TagsInputItemDeleteTrigger,
+	TagsInputItemPreview,
+	TagsInputItemText,
 } from "@openepi/react-ui/TagsInput"
-import {
-	Tag,
-	TagDeleteTrigger,
-	TagPreview,
-	TagText,
-} from "@openepi/react-ui/Tag"
 import Close from "packages/icons/dist/icons/Close"
 import KeyboardArrowDown from "packages/icons/dist/icons/KeyboardArrowDown"
 import { IconButton } from "@openepi/react-ui/IconButton"
@@ -287,14 +285,18 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
 										>
 											<TagsInputControl>
 												{tagsInput.value.map((value, index) => (
-													<Tag key={index} index={index} value={value}>
-														<TagPreview>
-															<TagText>{value}</TagText>
-															<TagDeleteTrigger>
+													<TagsInputItem
+														key={index}
+														index={index}
+														value={value}
+													>
+														<TagsInputItemPreview>
+															<TagsInputItemText>{value}</TagsInputItemText>
+															<TagsInputItemDeleteTrigger>
 																<Close />
-															</TagDeleteTrigger>
-														</TagPreview>
-													</Tag>
+															</TagsInputItemDeleteTrigger>
+														</TagsInputItemPreview>
+													</TagsInputItem>
 												))}
 												<TagsInputInput asChild>
 													<ComboboxInput />

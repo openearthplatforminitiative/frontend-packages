@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
-import { styled } from "../styled-system/jsx"
-import { iconButton } from "../styled-system/recipes/icon-button"
+import { styled } from "../../styled-system/jsx"
+import { iconButton } from "../../styled-system/recipes/icon-button"
 import { ark, HTMLArkProps } from "@ark-ui/react"
 import { Icon } from "./Icon"
 import { IconName } from "@openepi/icons"
@@ -40,10 +40,10 @@ const baseButton = forwardRef<HTMLButtonElement, IconButtonProps>(
 		return (
 			<ark.button
 				ref={ref}
-				{...rest}
 				tabIndex={0}
 				disabled={loading ? loading : false}
 				data-active={active ? active : undefined}
+				{...rest}
 			>
 				{loading ? (
 					<Icon animation="spin" name="ProgressActivity" />

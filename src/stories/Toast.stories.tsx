@@ -10,7 +10,7 @@ import {
 import { Button } from "@openepi/react-ui/Button"
 import { Portal } from "@ark-ui/react"
 import { IconButton } from "@openepi/react-ui/IconButton"
-import Close from "@openepi/icons/icons/Close"
+import { Close } from "@openepi/icons/icons"
 
 const meta: Meta<typeof Toast> = {
 	title: "Components/Toast",

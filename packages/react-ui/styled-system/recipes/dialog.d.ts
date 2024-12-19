@@ -8,10 +8,6 @@ interface DialogVariant {
  */
 placement: "center" | "top" | "bottom"
 /**
- * @default "outside"
- */
-scrollBehavior: "inside" | "outside"
-/**
  * @default "md"
  */
 size: "xs" | "sm" | "md" | "lg" | "xl" | "cover" | "full"
@@ -31,7 +27,7 @@ export type DialogVariantProps = {
 
 export interface DialogRecipe {
   __type: DialogVariantProps
-  (props?: DialogVariantProps): Pretty<Record<"trigger" | "backdrop" | "positioner" | "content" | "title" | "description" | "closeTrigger" | "header" | "body" | "footer" | "backdrop", string>>
+  (props?: DialogVariantProps): Pretty<Record<"trigger" | "backdrop" | "positioner" | "content" | "title" | "description" | "closeTrigger" | "header" | "body" | "wrapper" | "footer" | "backdrop", string>>
   raw: (props?: DialogVariantProps) => DialogVariantProps
   variantMap: DialogVariantMap
   variantKeys: Array<keyof DialogVariant>

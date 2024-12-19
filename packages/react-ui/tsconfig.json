@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "target": "ES6",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "declaration": true, // Generate .d.ts files
-    "outDir": "dist", // Output compiled files to 'dist'
+    "lib": ["ES2023", "esnext.asynciterable", "dom"],
+    "module": "preserve",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+    "baseUrl": ".",
+    "declaration": true,
+    "outDir": "dist",
     "strict": true,
     "jsx": "react-jsx",
     "allowJs": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src",
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

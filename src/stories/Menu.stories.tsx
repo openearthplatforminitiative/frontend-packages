@@ -71,7 +71,7 @@ export const NestedMenu: StoryFn<typeof Menu> = () => (
 				Menu
 			</Button>
 		</MenuTrigger>
-		<MenuContent>
+		<MenuContent portalled>
 			<MenuItem value="react">React</MenuItem>
 			<MenuItem value="solid">Solid</MenuItem>
 			<MenuSeparator />

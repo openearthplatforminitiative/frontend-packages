@@ -109,7 +109,7 @@ export const semanticColors = defineSemanticTokens.colors({
       value: "{colors.gray.700}",
     },
     focusRing: {
-      value: "{colors.gray.800}",
+      value: "{colors.gray.300}",
     },
   },
 
@@ -184,4 +184,27 @@ export const semanticColors = defineSemanticTokens.colors({
       value: "{colors.cyan.600}",
     },
   },
+  error: {
+    contrast: {
+      value: "white",
+    },
+    fg: {
+      value: "{colors.red.700}",
+    },
+    subtle: {
+      value: "{colors.red.100}",
+    },
+    muted: {
+      value: "{colors.red.200}",
+    },
+    emphasized: {
+      value: "{colors.red.300}",
+    },
+    solid: {
+      value: "{colors.red.700}",
+    },
+    focusRing: {
+      value: "{colors.red.600}",
+    },
+  }
 })

@@ -1,7 +1,7 @@
 import { Accordion as ArkAccordion } from "@ark-ui/react"
 import { createStyleContext } from "../utils/createStyleContext"
-import { accordion, AccordionVariantProps } from "../styled-system/recipes"
-import { JsxStyleProps } from "../styled-system/types"
+import { accordion, AccordionVariantProps } from "../../styled-system/recipes"
+import { JsxStyleProps } from "../../styled-system/types"
 
 const { withProvider, withContext } = createStyleContext(accordion)
 
