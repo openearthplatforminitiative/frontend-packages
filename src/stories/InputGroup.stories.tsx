@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import {
 	Field,
 	FieldErrorText,
@@ -6,14 +6,14 @@ import {
 	FieldLabel,
 } from "@openepi/react-ui/Field"
 import { Input } from "@openepi/react-ui/Input"
-import { InputGroup } from "packages/react-ui/dist/components/InputGroup"
-import { Visibility } from "@openepi/icons/icons"
-import { VisibilityOff } from "@openepi/icons/icons"
-import { Mail } from "@openepi/icons/icons"
+import { InputGroup } from "@openepi/react-ui"
+import { Visibility } from "@openepi/icons"
+import { VisibilityOff } from "@openepi/icons"
+import { Mail } from "@openepi/icons"
 import { useState } from "react"
 import { IconButton } from "@openepi/react-ui/IconButton"
 import { Stack } from "../../styled-system/jsx"
-import { NativeSelect } from "packages/react-ui/dist/components/NativeSelect"
+import { NativeSelect } from "@openepi/react-ui/NativeSelect"
 
 const meta: Meta<typeof InputGroup> = {
 	title: "Form Components/InputGroup",

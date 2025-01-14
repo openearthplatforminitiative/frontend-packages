@@ -1,16 +1,25 @@
 {
   "name": "@openepi/icons",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "Material symbols available as React components",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
-    "dist/"
+    "dist"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "node esbuild.config.js",
+    "build": "tsx ../../scripts/build/main.ts --dts",
+    "build:fast": "tsx ../../scripts/build/main.ts",
+    "dev": "npm run build:fast -- --watch",
     "generate-icons": "node scripts/generate-icons.mjs",
     "generate-types": "node scripts/generate-svg-types.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
@@ -18,12 +27,15 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js"
-    },
-    "./icons": {
-      "import": "./dist/icons/index.js",
-      "require": "./dist/icons/index.js"
+      "source": "./src/index.ts",
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
     }
   }
 }

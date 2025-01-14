@@ -1,4 +1,4 @@
-import { IconName } from "./index"
+import { type IconName } from "./types"
 import { Help as DefaultIcon } from "./icons"
 import type { SVGProps } from "react"
 import { lazy, Suspense } from "react"

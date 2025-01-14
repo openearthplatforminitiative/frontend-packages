@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import {
 	Combobox,
 	ComboboxClearTrigger,
@@ -17,7 +17,7 @@ import { useMemo, useState } from "react"
 import { Portal } from "@openepi/react-ui/Portal"
 import {
 	ComboboxContext,
-	ComboboxInputValueChangeDetails,
+	type ComboboxInputValueChangeDetails,
 	createListCollection,
 } from "@ark-ui/react"
 import { Field, FieldLabel } from "@openepi/react-ui/Field"
@@ -32,8 +32,8 @@ import {
 	TagsInputItemPreview,
 	TagsInputItemText,
 } from "@openepi/react-ui/TagsInput"
-import Close from "packages/icons/dist/icons/Close"
-import KeyboardArrowDown from "packages/icons/dist/icons/KeyboardArrowDown"
+import { Close } from "@openepi/icons"
+import { KeyboardArrowDown } from "@openepi/icons"
 import { IconButton } from "@openepi/react-ui/IconButton"
 import { groupBy } from "lodash"
 import { InputGroup } from "@openepi/react-ui/InputGroup"
@@ -136,7 +136,7 @@ const country_list: string[] = [
 	"Zimbabwe",
 ]
 
-export const MultiSelect: StoryFn<typeof Combobox> = (args) => {
+export const MultiSelect: StoryFn<typeof Combobox> = (args: any) => {
 	const [items, setItems] = useState(country_list)
 
 	const collection = useMemo(() => createListCollection({ items }), [items])
@@ -220,7 +220,7 @@ export const MultiSelect: StoryFn<typeof Combobox> = (args) => {
 	)
 }
 
-export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
+export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args: any) => {
 	const [items, setItems] = useState(country_list)
 
 	const collection = useMemo(() => createListCollection({ items }), [items])
@@ -254,8 +254,12 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args) => {
 								allowOverflow
 								value={combobox.value}
 								onInputValueChange={handleInputChange}
-								onValueChange={(value) => combobox.setValue(value.value)}
-								validate={(value) => country_list.includes(value.inputValue)}
+								onValueChange={(value: { value: string[] }) =>
+									combobox.setValue(value.value)
+								}
+								validate={(value: { inputValue: string }) =>
+									country_list.includes(value.inputValue)
+								}
 								onFocus={() => combobox.setOpen(true)}
 								editable={false}
 							>

@@ -1,9 +1,11 @@
-import { forwardRef, ReactNode } from "react"
-import { styled } from "../../styled-system/jsx"
-import { button } from "../../styled-system/recipes/button"
-import { ark, HTMLArkProps } from "@ark-ui/react"
+"use client"
+
+import { forwardRef, type ReactNode } from "react"
+import { styled } from "../styled-system/jsx"
+import { button } from "../styled-system/recipes/button"
+import { ark, type HTMLArkProps } from "@ark-ui/react"
 import { Icon } from "./Icon"
-import { IconName } from "@openepi/icons"
+import { type IconName } from "@openepi/icons"
 
 interface LeftComponent {
 	leftComponent: ReactNode
@@ -71,12 +73,6 @@ const BaseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 
 BaseButton.displayName = "BaseButton"
 
-const something = () => (
-	<BaseButton onClick={(e) => console.log(e)}>Hei</BaseButton>
-)
-
 export const Button = styled(BaseButton, button)
-
-const elser = () => <Button onClick={(e) => console.log(e)}>Hei</Button>
 
 Button.displayName = "Button"

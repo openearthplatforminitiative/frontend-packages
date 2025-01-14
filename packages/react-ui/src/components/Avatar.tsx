@@ -1,9 +1,9 @@
 import { Avatar as ArkAvatar } from "@ark-ui/react"
-import { avatar } from "../../styled-system/recipes/avatar"
+import { avatar } from "../styled-system/recipes/avatar"
 import { forwardRef } from "react"
-import { styled } from "../../styled-system/jsx/factory"
-import { cx } from "../../styled-system/css/cx"
-import { Person } from "@openepi/icons/icons"
+import { styled } from "../styled-system/jsx/factory"
+import { cx } from "../styled-system/css/cx"
+import { Person } from "@openepi/icons"
 import { Icon } from "./Icon"
 export interface AvatarProps extends ArkAvatar.RootProps {
 	name?: string

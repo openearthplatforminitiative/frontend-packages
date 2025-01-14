@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import { Text } from "@openepi/react-ui/Text"
 import { VStack } from "../../styled-system/jsx"
 

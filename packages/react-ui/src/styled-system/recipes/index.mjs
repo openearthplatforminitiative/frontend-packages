@@ -14,6 +14,5 @@ export * from './dialog.mjs';
 export * from './drawer.mjs';
 export * from './field.mjs';
 export * from './menu.mjs';
-export * from './tag.mjs';
 export * from './tags-input.mjs';
 export * from './toast.mjs';

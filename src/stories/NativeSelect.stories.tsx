@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import {
 	Field,
 	FieldErrorText,
@@ -6,8 +6,8 @@ import {
 	FieldLabel,
 } from "@openepi/react-ui/Field"
 import { NativeSelect } from "@openepi/react-ui/NativeSelect"
-import { Mail } from "@openepi/icons/icons"
-import { Visibility } from "@openepi/icons/icons"
+import { Mail } from "@openepi/icons"
+import { Visibility } from "@openepi/icons"
 import { InputGroup } from "@openepi/react-ui/InputGroup"
 import { Stack } from "../../styled-system/jsx"
 import { IconButton } from "@openepi/react-ui/IconButton"
@@ -29,7 +29,7 @@ export default meta
 
 export const Default: StoryObj<typeof NativeSelect> = {}
 
-export const Disabled: StoryFn<typeof NativeSelect> = (args) => (
+export const Disabled: StoryFn<typeof NativeSelect> = (args: any) => (
 	<NativeSelect disabled {...args}>
 		<option value="1">Option 1</option>
 		<option value="2">Option 2</option>
@@ -37,7 +37,7 @@ export const Disabled: StoryFn<typeof NativeSelect> = (args) => (
 	</NativeSelect>
 )
 
-export const Grouped: StoryFn<typeof NativeSelect> = (args) => {
+export const Grouped: StoryFn<typeof NativeSelect> = (args: any) => {
 	return (
 		<Stack display="inline-flex">
 			<InputGroup leftComponent={<Mail />}>
@@ -84,7 +84,7 @@ export const Grouped: StoryFn<typeof NativeSelect> = (args) => {
 		</Stack>
 	)
 }
-export const WithField: StoryFn<typeof NativeSelect> = (args) => (
+export const WithField: StoryFn<typeof NativeSelect> = (args: any) => (
 	<Field>
 		<FieldLabel>Label</FieldLabel>
 		<NativeSelect {...args}>

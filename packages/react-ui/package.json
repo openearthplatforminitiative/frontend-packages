@@ -1,63 +1,79 @@
 {
   "name": "@openepi/react-ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Responsive and accessible React UI components built with React, Ark UI and Panda",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsx ../../scripts/build/main.ts --dts",
+    "build:fast": "tsx ../../scripts/build/main.ts",
+    "dev": "npm run build:fast -- --watch",
     "prepare": "panda codegen"
   },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
   "dependencies": {
-    "@ark-ui/react": "^4.4.4",
+    "@ark-ui/react": "^4",
     "@openepi/icons": "*",
-    "@zag-js/anatomy": "^0.77.1",
-    "lodash": "^4.17.21"
+    "@zag-js/anatomy": "^0",
+    "@pandacss/dev": "^0",
+    "lodash": "^4"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.47.1",
-    "@types/lodash": "^4.17.13",
-    "@types/react": "^18.3.12",
-    "esbuild": "^0.24.0",
-    "postcss": "^8.4.47"
+    "@types/lodash": "^4"
   },
   "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
     "./preset": {
-      "types": "./dist/preset/index.d.ts",
-      "default": "./dist/theme/index.js"
+      "source": "./src/preset.ts",
+      "import": {
+        "types": "./dist/types/preset.d.ts",
+        "default": "./dist/esm/preset.js"
+      },
+      "require": {
+        "types": "./dist/types/preset.d.ts",
+        "default": "./dist/cjs/preset.cjs"
+      }
     },
-    "./styled-system/css": {
-      "types": "./styled-system/css/index.d.ts",
-      "require": "./styled-system/css/index.mjs",
-      "import": "./css/index.mjs"
-    },
-    "./styled-system/tokens": {
-      "types": "./styled-system/tokens/index.d.ts",
-      "require": "./styled-system/tokens/index.mjs",
-      "import": "./styled-system/tokens/index.mjs"
-    },
-    "./styled-system/types": {
-      "types": "./styled-system/types/index.d.ts",
-      "require": "./styled-system/types/index.mjs",
-      "import": "./styled-system/types/index.mjs"
-    },
-    "./styled-system/patterns": {
-      "types": "./styled-system/patterns/index.d.ts",
-      "require": "./styled-system/patterns/index.mjs",
-      "import": "./styled-system/patterns/index.mjs"
-    },
-    "./styled-system/recipes": {
-      "types": "./styled-system/recipes/index.d.ts",
-      "require": "./styled-system/recipes/index.mjs",
-      "import": "./styled-system/recipes/index.mjs"
-    },
-    "./styled-system/jsx": {
-      "types": "./styled-system/jsx/index.d.ts",
-      "require": "./styled-system/jsx/index.mjs",
-      "import": "./styled-system/jsx/index.mjs"
+    "./styled-system/*": {
+      "source": "./src/styled-system/*.ts",
+      "import": {
+        "types": "./dist/types/styled-system/*.d.ts",
+        "default": "./dist/esm/styled-system/*.js"
+      },
+      "require": {
+        "types": "./dist/types/styled-system/*.d.ts",
+        "default": "./dist/cjs/styled-system/*.cjs"
+      }
     },
     "./*": {
-      "types": "./dist/components/*.d.ts",
-      "default": "./dist/components/*.js"
+      "source": "./src/components/*.ts",
+      "import": {
+        "types": "./dist/types/components/*.d.ts",
+        "default": "./dist/esm/components/*.js"
+      },
+      "require": {
+        "types": "./dist/types/components/*.d.ts",
+        "default": "./dist/cjs/components/*.cjs"
+      }
     }
   }
 }

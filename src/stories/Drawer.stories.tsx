@@ -1,7 +1,7 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import { Button } from "@openepi/react-ui/Button"
 import { IconButton } from "@openepi/react-ui/IconButton"
-import { ArrowOutward, Close, Menu } from "@openepi/icons/icons"
+import { ArrowOutward, Close, Menu } from "@openepi/icons"
 import {
 	Drawer,
 	DrawerBackdrop,

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { type Meta, type StoryObj } from "@storybook/react"
 import {
 	TagsInput,
 	TagsInputControl,
@@ -12,8 +12,7 @@ import {
 	TagsInputItemPreview,
 	TagsInputItemText,
 } from "@openepi/react-ui/TagsInput"
-import { Close } from "@openepi/icons/icons"
-import {} from "@openepi/react-ui/Tag"
+import { Close } from "@openepi/icons"
 import { IconButton } from "@openepi/react-ui/IconButton"
 import { InputGroup } from "@openepi/react-ui/InputGroup"
 

@@ -1,19 +1,4 @@
 {
-  "compilerOptions": {
-    "lib": ["ES2023", "esnext.asynciterable", "dom"],
-    "module": "preserve",
-    "moduleResolution": "Bundler",
-    "moduleDetection": "force",
-    "baseUrl": ".",
-    "declaration": true,
-    "outDir": "dist",
-    "strict": true,
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "rootDir": "./src",
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "extends": "../../tsconfig.build.json",
+  "include": ["**/*.ts", "**/*.tsx"]
 }

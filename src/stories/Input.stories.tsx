@@ -1,15 +1,15 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import {
 	Field,
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
 } from "@openepi/react-ui/Field"
-import { Input } from "@openepi/react-ui/Input"
-import { InputGroup } from "packages/react-ui/dist/components/InputGroup"
-import { Visibility } from "@openepi/icons/icons"
-import { VisibilityOff } from "@openepi/icons/icons"
-import { Mail } from "@openepi/icons/icons"
+import { Input } from "@openepi/react-ui"
+import { InputGroup } from "@openepi/react-ui"
+import { Visibility } from "@openepi/icons"
+import { VisibilityOff } from "@openepi/icons"
+import { Mail } from "@openepi/icons"
 import { useState } from "react"
 import { IconButton } from "@openepi/react-ui/IconButton"
 import { Stack } from "../../styled-system/jsx"

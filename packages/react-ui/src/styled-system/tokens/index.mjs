@@ -1312,7 +1312,7 @@ const tokens = {
     "variable": "var(--colors-gray-solid)"
   },
   "colors.gray.focusRing": {
-    "value": "var(--colors-gray-800)",
+    "value": "var(--colors-gray-300)",
     "variable": "var(--colors-gray-focus-ring)"
   },
   "colors.primary.contrast": {

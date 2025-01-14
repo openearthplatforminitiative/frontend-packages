@@ -1,13 +1,13 @@
 import { ark } from "@ark-ui/react"
-import { styled } from "../../styled-system/jsx"
-import { inputGroup } from "../../styled-system/recipes"
+import { styled } from "../styled-system/jsx"
+import { inputGroup } from "../styled-system/recipes"
 import {
 	forwardRef,
 	useRef,
 	cloneElement,
-	ReactElement,
-	MutableRefObject,
-	ReactNode,
+	type ReactElement,
+	type MutableRefObject,
+	type ReactNode,
 	useEffect,
 	useState,
 } from "react"
@@ -56,7 +56,10 @@ const BaseInputGroup = forwardRef<HTMLDivElement, InputGroupProps>(
 		}, [localRef])
 
 		const clonedChildren = cloneElement(children, {
-			ref: mergeRefs(children.ref, localRef),
+			ref: mergeRefs(
+				(children as ReactElement & { ref?: React.Ref<HTMLElement> }).ref,
+				localRef
+			),
 			style: { flex: 1 },
 		})
 

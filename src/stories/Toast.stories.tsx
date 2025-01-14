@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { type Meta, type StoryObj } from "@storybook/react"
 import {
 	createToaster,
 	Toast,
@@ -10,7 +10,7 @@ import {
 import { Button } from "@openepi/react-ui/Button"
 import { Portal } from "@ark-ui/react"
 import { IconButton } from "@openepi/react-ui/IconButton"
-import { Close } from "@openepi/icons/icons"
+import { Close } from "@openepi/icons"
 
 const meta: Meta<typeof Toast> = {
 	title: "Components/Toast",

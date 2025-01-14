@@ -1,11 +1,11 @@
-import { ark, HTMLArkProps } from "@ark-ui/react"
+import { ark, type HTMLArkProps } from "@ark-ui/react"
 import { forwardRef } from "react"
 import { createStyleContext } from "../utils/createStyleContext"
-import { JsxStyleProps } from "../../styled-system/types"
-import { card } from "../../styled-system/recipes"
-import { HStack } from "../../styled-system/jsx"
+import { type JsxStyleProps } from "../styled-system/types"
+import { card } from "../styled-system/recipes"
+import { HStack } from "../styled-system/jsx"
 import { Icon } from "./Icon"
-import { IconName } from "@openepi/icons"
+import { type IconName } from "@openepi/icons"
 
 const { withProvider, withContext } = createStyleContext(card)
 

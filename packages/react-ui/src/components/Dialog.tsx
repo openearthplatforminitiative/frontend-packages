@@ -1,7 +1,7 @@
-import { JsxStyleProps } from "../../styled-system/types"
+import { type JsxStyleProps } from "../styled-system/types"
 import { createStyleContext } from "../utils/createStyleContext"
-import { Dialog as ArkDialog, HTMLArkProps } from "@ark-ui/react"
-import { dialog, DialogVariantProps } from "../../styled-system/recipes"
+import { Dialog as ArkDialog, type HTMLArkProps } from "@ark-ui/react"
+import { dialog, type DialogVariantProps } from "../styled-system/recipes"
 import { forwardRef } from "react"
 
 const { withRootProvider, withContext } = createStyleContext(dialog)

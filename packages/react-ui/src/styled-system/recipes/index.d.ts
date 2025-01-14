@@ -15,6 +15,5 @@ export * from './dialog';
 export * from './drawer';
 export * from './field';
 export * from './menu';
-export * from './tag';
 export * from './tags-input';
 export * from './toast';

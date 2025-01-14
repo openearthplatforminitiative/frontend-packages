@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import {
 	Menu,
 	MenuContent,
@@ -25,7 +25,7 @@ import {
 	Edit,
 	ArrowForward,
 	Close,
-} from "@openepi/icons/icons"
+} from "@openepi/icons"
 
 const meta: Meta<typeof Menu> = {
 	title: "Components/Menu",

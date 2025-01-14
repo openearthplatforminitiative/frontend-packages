@@ -1,9 +1,9 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import { Button } from "@openepi/react-ui/Button"
 import { HStack, Stack } from "../../styled-system/jsx"
 import { button } from "../../styled-system/recipes"
 import { Text } from "@openepi/react-ui/Text"
-import { Notifications } from "@openepi/icons/icons"
+import { Notifications } from "@openepi/icons"
 import { Icon } from "@openepi/react-ui/Icon"
 
 const meta: Meta<typeof Button> = {
@@ -42,7 +42,7 @@ export default meta
 
 export const Default: StoryObj<typeof Button> = {}
 
-export const Variants: StoryFn<typeof Button> = (args) => {
+export const Variants: StoryFn<typeof Button> = (args: any) => {
 	const colors = ["primary", "secondary", "tertiary", "gray"]
 	return (
 		<Stack>
@@ -92,7 +92,7 @@ export const Variants: StoryFn<typeof Button> = (args) => {
 	)
 }
 
-export const Sizes: StoryFn<typeof Button> = (args) => {
+export const Sizes: StoryFn<typeof Button> = (args: any) => {
 	return (
 		<HStack>
 			<Button key="sm" size={"sm"} {...args}>
@@ -108,19 +108,19 @@ export const Sizes: StoryFn<typeof Button> = (args) => {
 	)
 }
 
-export const Loading: StoryFn<typeof Button> = (args) => (
+export const Loading: StoryFn<typeof Button> = (args: any) => (
 	<Button loading {...args}>
 		Loading
 	</Button>
 )
 
-export const Disabled: StoryFn<typeof Button> = (args) => (
+export const Disabled: StoryFn<typeof Button> = (args: any) => (
 	<Button disabled {...args}>
 		Disabled
 	</Button>
 )
 
-export const WithIcon: StoryFn<typeof Button> = (args) => (
+export const WithIcon: StoryFn<typeof Button> = (args: any) => (
 	<HStack gap={2}>
 		<Button
 			key="add"

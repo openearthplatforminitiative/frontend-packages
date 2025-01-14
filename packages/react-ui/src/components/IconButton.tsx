@@ -1,9 +1,9 @@
 import { forwardRef } from "react"
-import { styled } from "../../styled-system/jsx"
-import { iconButton } from "../../styled-system/recipes/icon-button"
-import { ark, HTMLArkProps } from "@ark-ui/react"
+import { styled } from "../styled-system/jsx"
+import { iconButton } from "../styled-system/recipes/icon-button"
+import { ark, type HTMLArkProps } from "@ark-ui/react"
 import { Icon } from "./Icon"
-import { IconName } from "@openepi/icons"
+import { type IconName } from "@openepi/icons"
 
 interface IconComponent {
 	icon: JSX.Element

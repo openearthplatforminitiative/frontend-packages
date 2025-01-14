@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import { HStack, Stack } from "../../styled-system/jsx"
 import { button } from "../../styled-system/recipes"
 import { Text } from "@openepi/react-ui/Text"

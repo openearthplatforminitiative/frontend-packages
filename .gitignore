@@ -23,3 +23,7 @@ packages/*/.vscode
 .vercel
 ## Panda
 styled-system/*
+
+
+.nx/cache
+.nx/workspace-data

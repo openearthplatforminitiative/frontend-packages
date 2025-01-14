@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react"
+import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import {
 	AccordionItem,
 	AccordionItemContent,
@@ -7,7 +7,7 @@ import {
 	Accordion,
 } from "@openepi/react-ui/Accordion"
 import { accordion } from "../../styled-system/recipes"
-import { Icon } from "packages/icons"
+import { Icon } from "@openepi/icons"
 
 const meta: Meta<typeof Accordion> = {
 	title: "Components/Accordion",
