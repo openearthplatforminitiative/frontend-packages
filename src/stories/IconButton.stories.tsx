@@ -1,8 +1,8 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import { HStack, Stack } from "../../styled-system/jsx"
 import { button } from "../../styled-system/recipes"
-import { Text } from "@openepi/react-ui/Text"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { Text } from "@openepi/react-ui"
+import { IconButton } from "@openepi/react-ui"
 
 const meta: Meta<typeof IconButton> = {
 	title: "Components/Button/IconButton",

@@ -1,5 +1,5 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
-import { Text } from "@openepi/react-ui/Text"
+import { Text } from "@openepi/react-ui"
 import { VStack } from "../../styled-system/jsx"
 
 const meta: Meta<typeof Text> = {

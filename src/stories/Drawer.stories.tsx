@@ -1,6 +1,6 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
-import { Button } from "@openepi/react-ui/Button"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { Button } from "@openepi/react-ui"
+import { IconButton } from "@openepi/react-ui"
 import { ArrowOutward, Close, Menu } from "@openepi/icons"
 import {
 	Drawer,
@@ -15,10 +15,10 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 	DrawerWrapper,
-} from "@openepi/react-ui/Drawer"
-import { Portal } from "@openepi/react-ui/Portal"
+} from "@openepi/react-ui"
+import { Portal } from "@openepi/react-ui"
 import { Stack, VStack } from "../../styled-system/jsx"
-import { Icon } from "@openepi/react-ui/Icon"
+import { Icon } from "@openepi/react-ui"
 
 const meta: Meta<typeof Drawer> = {
 	title: "Components/Drawer",

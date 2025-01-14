@@ -5,10 +5,10 @@ import {
 	FieldHelperText,
 	FieldLabel,
 	FieldRequiredIndicator,
-} from "@openepi/react-ui/Field"
-import { Input } from "@openepi/react-ui/Input"
-import { NativeSelect } from "@openepi/react-ui/NativeSelect"
-import { TextArea } from "@openepi/react-ui/TextArea"
+} from "@openepi/react-ui"
+import { Input } from "@openepi/react-ui"
+import { NativeSelect } from "@openepi/react-ui"
+import { TextArea } from "@openepi/react-ui"
 
 const meta: Meta<typeof Field> = {
 	title: "Form Components/Field",

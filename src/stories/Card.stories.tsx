@@ -6,7 +6,7 @@ import {
 	CardDescription,
 	CardOuterIcon,
 	CardTitle,
-} from "@openepi/react-ui/Card"
+} from "@openepi/react-ui"
 import { HStack, VStack } from "../../styled-system/jsx"
 import Image from "next/image"
 

@@ -4,14 +4,14 @@ import {
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
-} from "@openepi/react-ui/Field"
+} from "@openepi/react-ui"
 import { Input } from "@openepi/react-ui"
 import { InputGroup } from "@openepi/react-ui"
 import { Visibility } from "@openepi/icons"
 import { VisibilityOff } from "@openepi/icons"
 import { Mail } from "@openepi/icons"
 import { useState } from "react"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { IconButton } from "@openepi/react-ui"
 import { Stack } from "../../styled-system/jsx"
 
 const meta: Meta<typeof Input> = {

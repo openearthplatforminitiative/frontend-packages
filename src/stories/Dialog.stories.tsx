@@ -1,6 +1,6 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
-import { Button } from "@openepi/react-ui/Button"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { Button } from "@openepi/react-ui"
+import { IconButton } from "@openepi/react-ui"
 import { Close } from "@openepi/icons"
 import {
 	Dialog,
@@ -15,8 +15,8 @@ import {
 	DialogTitle,
 	DialogTrigger,
 	DialogWrapper,
-} from "@openepi/react-ui/Dialog"
-import { Portal } from "@openepi/react-ui/Portal"
+} from "@openepi/react-ui"
+import { Portal } from "@openepi/react-ui"
 import { Stack } from "../../styled-system/jsx"
 
 const meta: Meta<typeof Dialog> = {

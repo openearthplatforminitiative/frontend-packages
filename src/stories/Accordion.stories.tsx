@@ -5,7 +5,7 @@ import {
 	AccordionItemIndicator,
 	AccordionItemTrigger,
 	Accordion,
-} from "@openepi/react-ui/Accordion"
+} from "@openepi/react-ui"
 import { accordion } from "../../styled-system/recipes"
 import { Icon } from "@openepi/icons"
 

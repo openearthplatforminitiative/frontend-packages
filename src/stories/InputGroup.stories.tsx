@@ -4,16 +4,16 @@ import {
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
-} from "@openepi/react-ui/Field"
-import { Input } from "@openepi/react-ui/Input"
+} from "@openepi/react-ui"
+import { Input } from "@openepi/react-ui"
 import { InputGroup } from "@openepi/react-ui"
 import { Visibility } from "@openepi/icons"
 import { VisibilityOff } from "@openepi/icons"
 import { Mail } from "@openepi/icons"
 import { useState } from "react"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { IconButton } from "@openepi/react-ui"
 import { Stack } from "../../styled-system/jsx"
-import { NativeSelect } from "@openepi/react-ui/NativeSelect"
+import { NativeSelect } from "@openepi/react-ui"
 
 const meta: Meta<typeof InputGroup> = {
 	title: "Form Components/InputGroup",

@@ -4,13 +4,13 @@ import {
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
-} from "@openepi/react-ui/Field"
-import { NativeSelect } from "@openepi/react-ui/NativeSelect"
+} from "@openepi/react-ui"
+import { NativeSelect } from "@openepi/react-ui"
 import { Mail } from "@openepi/icons"
 import { Visibility } from "@openepi/icons"
-import { InputGroup } from "@openepi/react-ui/InputGroup"
+import { InputGroup } from "@openepi/react-ui"
 import { Stack } from "../../styled-system/jsx"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { IconButton } from "@openepi/react-ui"
 
 const meta: Meta<typeof NativeSelect> = {
 	title: "Form Components/NativeSelect",

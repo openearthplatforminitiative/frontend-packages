@@ -6,10 +6,10 @@ import {
 	ToastDescription,
 	Toaster,
 	ToastTitle,
-} from "@openepi/react-ui/Toast"
-import { Button } from "@openepi/react-ui/Button"
+} from "@openepi/react-ui"
+import { Button } from "@openepi/react-ui"
 import { Portal } from "@ark-ui/react"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { IconButton } from "@openepi/react-ui"
 import { Close } from "@openepi/icons"
 
 const meta: Meta<typeof Toast> = {

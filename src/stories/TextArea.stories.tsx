@@ -4,8 +4,8 @@ import {
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
-} from "@openepi/react-ui/Field"
-import { TextArea } from "@openepi/react-ui/TextArea"
+} from "@openepi/react-ui"
+import { TextArea } from "@openepi/react-ui"
 
 const meta: Meta<typeof TextArea> = {
 	title: "Form Components/TextArea",

@@ -1,5 +1,5 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
-import { Avatar } from "@openepi/react-ui/Avatar"
+import { Avatar } from "@openepi/react-ui"
 
 const meta: Meta<typeof Avatar> = {
 	title: "Components/Avatar",

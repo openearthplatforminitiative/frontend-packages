@@ -11,10 +11,10 @@ import {
 	TagsInputItemInput,
 	TagsInputItemPreview,
 	TagsInputItemText,
-} from "@openepi/react-ui/TagsInput"
+} from "@openepi/react-ui"
 import { Close } from "@openepi/icons"
-import { IconButton } from "@openepi/react-ui/IconButton"
-import { InputGroup } from "@openepi/react-ui/InputGroup"
+import { IconButton } from "@openepi/react-ui"
+import { InputGroup } from "@openepi/react-ui"
 
 const meta: Meta<typeof TagsInput> = {
 	title: "Form Components/TagsInput",

@@ -1,5 +1,5 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
-import { Icon } from "@openepi/react-ui/Icon"
+import { Icon } from "@openepi/react-ui"
 
 const meta: Meta<typeof Icon> = {
 	title: "Components/Icon",

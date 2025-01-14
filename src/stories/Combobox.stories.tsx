@@ -12,16 +12,16 @@ import {
 	ComboboxItemText,
 	ComboboxPositioner,
 	ComboboxTrigger,
-} from "@openepi/react-ui/Combobox"
+} from "@openepi/react-ui"
 import { useMemo, useState } from "react"
-import { Portal } from "@openepi/react-ui/Portal"
+import { Portal } from "@openepi/react-ui"
 import {
 	ComboboxContext,
 	type ComboboxInputValueChangeDetails,
 	createListCollection,
 } from "@ark-ui/react"
-import { Field, FieldLabel } from "@openepi/react-ui/Field"
-import { Icon } from "@openepi/react-ui/Icon"
+import { Field, FieldLabel } from "@openepi/react-ui"
+import { Icon } from "@openepi/react-ui"
 import {
 	TagsInput,
 	TagsInputContext,
@@ -31,12 +31,12 @@ import {
 	TagsInputItemDeleteTrigger,
 	TagsInputItemPreview,
 	TagsInputItemText,
-} from "@openepi/react-ui/TagsInput"
+} from "@openepi/react-ui"
 import { Close } from "@openepi/icons"
 import { KeyboardArrowDown } from "@openepi/icons"
-import { IconButton } from "@openepi/react-ui/IconButton"
+import { IconButton } from "@openepi/react-ui"
 import { groupBy } from "lodash"
-import { InputGroup } from "@openepi/react-ui/InputGroup"
+import { InputGroup } from "@openepi/react-ui"
 import { HStack } from "../../styled-system/jsx"
 
 const initialItems = ["React", "Solid", "Vue"]

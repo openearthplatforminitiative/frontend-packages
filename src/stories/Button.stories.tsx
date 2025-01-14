@@ -1,10 +1,10 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
-import { Button } from "@openepi/react-ui/Button"
+import { Button } from "@openepi/react-ui"
 import { HStack, Stack } from "../../styled-system/jsx"
 import { button } from "../../styled-system/recipes"
-import { Text } from "@openepi/react-ui/Text"
+import { Text } from "@openepi/react-ui"
 import { Notifications } from "@openepi/icons"
-import { Icon } from "@openepi/react-ui/Icon"
+import { Icon } from "@openepi/react-ui"
 
 const meta: Meta<typeof Button> = {
 	title: "Components/Button/Button",

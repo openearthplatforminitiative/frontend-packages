@@ -1,5 +1,5 @@
 import { defineConfig } from "@pandacss/dev"
-import { preset } from "./packages/react-ui/src/preset"
+import { preset } from "@openepi/react-ui"
 
 export default defineConfig({
 	presets: [preset],

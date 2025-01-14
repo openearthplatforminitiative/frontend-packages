@@ -7,10 +7,10 @@ import {
 	MenuIndicator,
 	MenuSeparator,
 	MenuTriggerItem,
-} from "@openepi/react-ui/Menu"
-import { Button } from "@openepi/react-ui/Button"
-import { Icon } from "@openepi/react-ui/Icon"
-import { IconButton } from "@openepi/react-ui/IconButton"
+} from "@openepi/react-ui"
+import { Button } from "@openepi/react-ui"
+import { Icon } from "@openepi/react-ui"
+import { IconButton } from "@openepi/react-ui"
 import {
 	Handshake,
 	Home,
