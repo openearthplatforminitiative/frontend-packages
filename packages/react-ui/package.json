@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "tsx ../../scripts/build/main.ts --dts",
     "build:fast": "tsx ../../scripts/build/main.ts",

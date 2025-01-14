@@ -2,7 +2,7 @@
   "name": "openepi-frontend-packages",
   "version": "0.1.0",
   "private": true,
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "prepare": "panda codegen",
     "build": "nx run-many --target=build --all --parallel",
@@ -17,13 +17,13 @@
   ],
   "dependencies": {
     "@next/bundle-analyzer": "^15",
+    "@pandacss/dev": "^0",
     "next": "15",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
-    "@pandacss/dev": "^0",
     "@rollup/plugin-alias": "^5.1.1",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-replace": "^6.0.2",
