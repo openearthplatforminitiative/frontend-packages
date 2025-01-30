@@ -7,19 +7,20 @@ import {
 	type IconProps as IconComponentProps,
 } from "@openepi/icons"
 import { type IconVariantProps } from "@openepi/styled-system/recipes"
-import { cloneElement, forwardRef, isValidElement, ReactElement } from "react"
+import { cloneElement, isValidElement, ReactElement } from "react"
 import { ark } from "@ark-ui/react"
 
 type IconProps = Partial<IconVariantProps> &
 	Partial<IconComponentProps> & {
 		children?: ReactElement<SVGSVGElement>
+		ref?: React.Ref<SVGSVGElement>
 	}
 
-const baseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
-	const { children, name, filled, ...rest } = props
+const baseIcon = (props: IconProps) => {
+	const { children, name, ref, animation, filled, ...rest } = props
 
 	if (isValidElement(children)) {
-		return cloneElement(children, { ...rest })
+		return cloneElement(children, { ...(rest as any) })
 	}
 	if (name == null) {
 		throw new Error("Either children or name must be present")
@@ -29,7 +30,7 @@ const baseIcon = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
 			<IconComponent name={name} filled={filled} />
 		</ark.svg>
 	)
-})
+}
 
 export const Icon = styled(baseIcon, iconRecipe)
 

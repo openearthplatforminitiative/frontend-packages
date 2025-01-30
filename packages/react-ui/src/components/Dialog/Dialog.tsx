@@ -4,7 +4,6 @@ import { type JsxStyleProps } from "@openepi/styled-system/types"
 import { createStyleContext } from "../../utils/createStyleContext"
 import { Dialog as ArkDialog, type HTMLArkProps } from "@ark-ui/react"
 import { dialog, type DialogVariantProps } from "@openepi/styled-system/recipes"
-import { forwardRef } from "react"
 
 const { withRootProvider, withContext } = createStyleContext(dialog)
 
@@ -58,19 +57,21 @@ export const DialogContent = withContext<
 	JsxStyleProps & ArkDialog.ContentProps
 >(ArkDialog.Content, "content")
 
-const baseDialogWrapper = forwardRef<
-	HTMLDivElement,
-	JsxStyleProps & ArkDialog.ContentProps
->((props, ref) => {
+type DialogWrapperProps = JsxStyleProps &
+	ArkDialog.ContentProps & {
+		ref?: React.Ref<HTMLDivElement>
+	}
+
+const baseDialogWrapper = (props: DialogWrapperProps) => {
 	return (
 		<>
 			<DialogBackdrop />
 			<DialogPositioner>
-				<DialogContent ref={ref} {...props} />
+				<DialogContent {...props} />
 			</DialogPositioner>
 		</>
 	)
-})
+}
 
 baseDialogWrapper.displayName = "DialogWrapper"
 

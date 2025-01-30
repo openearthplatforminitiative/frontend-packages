@@ -18,8 +18,8 @@
     "generate-types": "node scripts/generate-svg-types.mjs"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
+    "react": ">=19",
+    "react-dom": ">=19"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
