@@ -1,0 +1,42 @@
+{
+  "name": "@openepi/styled-system",
+  "version": "1.0.0",
+  "description": "",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "exports": {
+    "./css": {
+      "types": "./dist/css/index.d.ts",
+      "import": "./dist/css/index.js",
+      "require": "./dist/css/index.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "import": "./dist/tokens/index.js",
+      "require": "./dist/tokens/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js",
+      "require": "./dist/types/index.js"
+    },
+    "./patterns": {
+      "types": "./dist/patterns/index.d.ts",
+      "import": "./dist/patterns/index.js",
+      "require": "./dist/patterns/index.js"
+    },
+    "./recipes": {
+      "types": "./dist/recipes/index.d.ts",
+      "import": "./dist/recipes/index.js",
+      "require": "./dist/recipes/index.js"
+    },
+    "./jsx": {
+      "types": "./dist/jsx/index.d.ts",
+      "import": "./dist/jsx/index.js",
+      "require": "./dist/jsx/index.js"
+    }
+  }
+}

@@ -9,7 +9,7 @@ import {
 } from "@openepi/react-ui"
 import { Button } from "@openepi/react-ui"
 import { Portal } from "@ark-ui/react"
-import { IconButton } from "@openepi/react-ui"
+import { IconButton, Icon } from "@openepi/react-ui"
 import { Close } from "@openepi/icons"
 
 const meta: Meta<typeof Toast> = {
@@ -43,7 +43,11 @@ const meta: Meta<typeof Toast> = {
 								<ToastTitle>{toast.title}</ToastTitle>
 								<ToastDescription>{toast.description}</ToastDescription>
 								<ToastCloseTrigger>
-									<IconButton icon={<Close />} size="sm" variant="ghost" />
+									<IconButton size="sm" variant="ghost">
+										<Icon>
+											<Close />
+										</Icon>
+									</IconButton>
 								</ToastCloseTrigger>
 							</Toast>
 						)}

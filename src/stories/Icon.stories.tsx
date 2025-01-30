@@ -11,6 +11,9 @@ const meta: Meta<typeof Icon> = {
 			defaultValue: "waves",
 		},
 	},
+	args: {
+		name: "Favorite",
+	},
 	render: (args) => <Icon fontSize="48px" {...args} />,
 }
 
@@ -18,15 +21,6 @@ export default meta
 
 export const Default: StoryObj<typeof Icon> = {}
 
-export const NotSpinning: StoryFn<typeof Icon> = (args) => (
-	<Icon fontSize="48px" name="ProgressActivity" {...args} />
-)
-
 export const Spinning: StoryFn<typeof Icon> = (args) => (
-	<Icon
-		fontSize="48px"
-		name={args.name ?? "ProgressActivity"}
-		animation="spin"
-		{...args}
-	/>
+	<Icon fontSize="48px" name="ProgressActivity" animation="spin" />
 )

@@ -11,6 +11,7 @@ import {
 	TagsInputItemInput,
 	TagsInputItemPreview,
 	TagsInputItemText,
+	Icon,
 } from "@openepi/react-ui"
 import { Close } from "@openepi/icons"
 import { IconButton } from "@openepi/react-ui"
@@ -29,12 +30,11 @@ const meta: Meta<typeof TagsInput> = {
 						<InputGroup
 							rightComponent={
 								<TagsInputClearTrigger asChild>
-									<IconButton
-										size="xs"
-										colorPalette="gray"
-										variant="outline"
-										icon={<Close />}
-									/>
+									<IconButton size="xs" colorPalette="gray" variant="outline">
+										<Icon>
+											<Close />
+										</Icon>
+									</IconButton>
 								</TagsInputClearTrigger>
 							}
 						>

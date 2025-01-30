@@ -23,7 +23,7 @@ export async function getConfig(options: Options): Promise<RollupOptions> {
 
 	const plugins: Plugin[] = [
 		nodeResolve({
-			extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs", ".d.ts"],
+			extensions: [".ts", ".tsx", ".js", ".jsx"],
 		}),
 		alias({ entries: aliases }),
 		esbuild({

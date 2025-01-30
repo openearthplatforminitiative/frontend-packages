@@ -1,5 +1,5 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
-import { Button } from "@openepi/react-ui"
+import { Button, Icon } from "@openepi/react-ui"
 import { IconButton } from "@openepi/react-ui"
 import { Close } from "@openepi/icons"
 import {
@@ -17,7 +17,7 @@ import {
 	DialogWrapper,
 } from "@openepi/react-ui"
 import { Portal } from "@openepi/react-ui"
-import { Stack } from "../../styled-system/jsx"
+import { Stack } from "@openepi/styled-system/jsx"
 
 const meta: Meta<typeof Dialog> = {
 	title: "Components/Dialog",
@@ -60,12 +60,11 @@ const meta: Meta<typeof Dialog> = {
 			<Portal>
 				<DialogWrapper>
 					<DialogCloseTrigger asChild>
-						<IconButton
-							icon={<Close />}
-							colorPalette="gray"
-							variant="ghost"
-							size="md"
-						/>
+						<IconButton colorPalette="gray" variant="ghost" size="md">
+							<Icon>
+								<Close />
+							</Icon>
+						</IconButton>
 					</DialogCloseTrigger>
 					<DialogHeader>
 						<DialogTitle>This is a title</DialogTitle>
@@ -90,7 +89,7 @@ export default meta
 
 export const Default: StoryObj = {}
 
-export const WithoutWrapper: StoryFn<typeof Dialog> = (args) => (
+export const WithoutWrapper: StoryFn<typeof Dialog> = (args: any) => (
 	<Dialog {...args}>
 		<DialogTrigger asChild>
 			<Button>Open dialog</Button>
@@ -100,12 +99,11 @@ export const WithoutWrapper: StoryFn<typeof Dialog> = (args) => (
 			<DialogPositioner>
 				<DialogContent>
 					<DialogCloseTrigger asChild>
-						<IconButton
-							icon={<Close />}
-							colorPalette="gray"
-							variant="ghost"
-							size="md"
-						/>
+						<IconButton colorPalette="gray" variant="ghost" size="md">
+							<Icon>
+								<Close />
+							</Icon>
+						</IconButton>
 					</DialogCloseTrigger>
 					<DialogHeader>
 						<DialogTitle>This is a title</DialogTitle>
@@ -127,25 +125,31 @@ export const WithoutWrapper: StoryFn<typeof Dialog> = (args) => (
 	</Dialog>
 )
 
-export const DeleteConfirmation: StoryFn<typeof Dialog> = (args) => (
+export const DeleteConfirmation: StoryFn<typeof Dialog> = (args: any) => (
 	<Dialog {...args}>
 		<DialogTrigger asChild>
-			<Button colorPalette="error" rightIcon="Close">
+			<Button colorPalette="error">
 				Delete item
+				<Icon>
+					<Close />
+				</Icon>
 			</Button>
 		</DialogTrigger>
 		<Portal>
 			<DialogWrapper>
 				<DialogCloseTrigger asChild>
 					<IconButton
-						icon={<Close />}
 						colorPalette="gray"
 						variant="ghost"
 						size="md"
 						onClick={(e) => {
 							console.log(e)
 						}}
-					/>
+					>
+						<Icon>
+							<Close />
+						</Icon>
+					</IconButton>
 				</DialogCloseTrigger>
 				<DialogHeader>
 					<DialogTitle>Delete item</DialogTitle>
@@ -157,8 +161,11 @@ export const DeleteConfirmation: StoryFn<typeof Dialog> = (args) => (
 				</DialogBody>
 				<DialogFooter>
 					<Stack direction="row-reverse">
-						<Button colorPalette="error" rightIcon="Close">
+						<Button colorPalette="error">
 							Delete
+							<Icon>
+								<Close />
+							</Icon>
 						</Button>
 						<Button colorPalette="gray" variant="outline">
 							Cancel

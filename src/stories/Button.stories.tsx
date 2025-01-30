@@ -1,9 +1,9 @@
 import { type Meta, type StoryFn, type StoryObj } from "@storybook/react"
 import { Button } from "@openepi/react-ui"
-import { HStack, Stack } from "../../styled-system/jsx"
-import { button } from "../../styled-system/recipes"
+import { HStack, Stack } from "@openepi/styled-system/jsx"
+import { button } from "@openepi/styled-system/recipes"
 import { Text } from "@openepi/react-ui"
-import { Notifications } from "@openepi/icons"
+import { Add, Notifications, Remove } from "@openepi/icons"
 import { Icon } from "@openepi/react-ui"
 
 const meta: Meta<typeof Button> = {
@@ -122,26 +122,22 @@ export const Disabled: StoryFn<typeof Button> = (args: any) => (
 
 export const WithIcon: StoryFn<typeof Button> = (args: any) => (
 	<HStack gap={2}>
-		<Button
-			key="add"
-			variant="subtle"
-			colorPalette="gray"
-			leftComponent={<Icon icon={<Notifications />} />}
-			{...args}
-		>
+		<Button key="add" variant="subtle" colorPalette="gray" {...args}>
+			<Icon>
+				<Notifications />
+			</Icon>
 			3
 		</Button>
-		<Button key="alarm" rightIcon="Add" {...args}>
+		<Button key="alarm" {...args}>
 			Add Element
+			<Icon>
+				<Add />
+			</Icon>
 		</Button>
-		<Button
-			key="remove"
-			colorPalette="gray"
-			bg="red.600"
-			borderColor="red.600"
-			rightIcon="Close"
-			{...args}
-		>
+		<Button colorPalette="gray" bg="red.600" borderColor="red.600" {...args}>
+			<Icon>
+				<Remove />
+			</Icon>
 			Delete
 		</Button>
 	</HStack>

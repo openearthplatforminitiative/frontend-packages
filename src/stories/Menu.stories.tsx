@@ -17,7 +17,6 @@ import {
 	Flag2,
 	Stacks,
 	Menu as MenuIcon,
-	Logout,
 	Code,
 	ArrowOutward,
 	MoreHoriz,
@@ -25,6 +24,7 @@ import {
 	Edit,
 	ArrowForward,
 	Close,
+	KeyboardArrowDown,
 } from "@openepi/icons"
 
 const meta: Meta<typeof Menu> = {
@@ -34,14 +34,13 @@ const meta: Meta<typeof Menu> = {
 	render: () => (
 		<Menu positioning={{ placement: "bottom-end" }}>
 			<MenuTrigger asChild>
-				<Button
-					rightComponent={
-						<MenuIndicator>
-							<Icon name="KeyboardArrowDown" />
-						</MenuIndicator>
-					}
-				>
+				<Button>
 					Menu
+					<MenuIndicator asChild>
+						<Icon>
+							<KeyboardArrowDown />
+						</Icon>
+					</MenuIndicator>
 				</Button>
 			</MenuTrigger>
 			<MenuContent portalled>
@@ -61,14 +60,13 @@ export const Default: StoryObj<typeof Menu> = {}
 export const NestedMenu: StoryFn<typeof Menu> = () => (
 	<Menu positioning={{ placement: "bottom-end" }}>
 		<MenuTrigger asChild>
-			<Button
-				rightComponent={
-					<MenuIndicator>
-						<Icon name="KeyboardArrowDown" />
-					</MenuIndicator>
-				}
-			>
+			<Button>
 				Menu
+				<MenuIndicator asChild>
+					<Icon>
+						<KeyboardArrowDown />
+					</Icon>
+				</MenuIndicator>
 			</Button>
 		</MenuTrigger>
 		<MenuContent portalled>
@@ -98,7 +96,13 @@ export const NestedMenu: StoryFn<typeof Menu> = () => (
 export const HamburgerMenu: StoryFn<typeof Menu> = () => (
 	<Menu positioning={{ placement: "bottom-end" }}>
 		<MenuTrigger asChild>
-			<IconButton icon={<MenuIcon />} variant="plain" />
+			<IconButton variant="plain">
+				<MenuIndicator asChild>
+					<Icon>
+						<MenuIcon />
+					</Icon>
+				</MenuIndicator>
+			</IconButton>
 		</MenuTrigger>
 		<MenuContent portalled>
 			<MenuItem value="home">
@@ -129,7 +133,13 @@ export const HamburgerMenu: StoryFn<typeof Menu> = () => (
 export const ActionMenu: StoryFn<typeof Menu> = () => (
 	<Menu positioning={{ placement: "bottom-end" }}>
 		<MenuTrigger asChild>
-			<IconButton icon={<MoreHoriz />} variant="subtle" colorPalette="gray" />
+			<IconButton variant="subtle" colorPalette="gray">
+				<MenuIndicator asChild>
+					<Icon>
+						<MoreHoriz />
+					</Icon>
+				</MenuIndicator>
+			</IconButton>
 		</MenuTrigger>
 		<MenuContent portalled>
 			<MenuItem value="open">

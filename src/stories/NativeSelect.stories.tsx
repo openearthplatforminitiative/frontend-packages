@@ -4,13 +4,12 @@ import {
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
+	Icon,
+	InputGroup,
+	NativeSelect,
 } from "@openepi/react-ui"
-import { NativeSelect } from "@openepi/react-ui"
 import { Mail } from "@openepi/icons"
-import { Visibility } from "@openepi/icons"
-import { InputGroup } from "@openepi/react-ui"
-import { Stack } from "../../styled-system/jsx"
-import { IconButton } from "@openepi/react-ui"
+import { Stack } from "@openepi/styled-system/jsx"
 
 const meta: Meta<typeof NativeSelect> = {
 	title: "Form Components/NativeSelect",
@@ -40,39 +39,11 @@ export const Disabled: StoryFn<typeof NativeSelect> = (args: any) => (
 export const Grouped: StoryFn<typeof NativeSelect> = (args: any) => {
 	return (
 		<Stack display="inline-flex">
-			<InputGroup leftComponent={<Mail />}>
-				<NativeSelect {...args} variant="unstyled">
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-				</NativeSelect>
-			</InputGroup>
 			<InputGroup
-				variant="filled"
-				rightComponent={
-					<IconButton
-						variant="subtle"
-						colorPalette="gray"
-						size="xs"
-						icon={<Visibility />}
-					/>
-				}
-			>
-				<NativeSelect disabled {...args} variant="unstyled">
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
-				</NativeSelect>
-			</InputGroup>
-			<InputGroup
-				variant="filled"
-				rightComponent={
-					<IconButton
-						variant="subtle"
-						colorPalette="gray"
-						size="xs"
-						icon={<Visibility />}
-					/>
+				leftComponent={
+					<Icon>
+						<Mail />
+					</Icon>
 				}
 			>
 				<NativeSelect {...args} variant="unstyled">

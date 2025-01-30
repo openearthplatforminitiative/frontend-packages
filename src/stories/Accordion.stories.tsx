@@ -6,7 +6,7 @@ import {
 	AccordionItemTrigger,
 	Accordion,
 } from "@openepi/react-ui"
-import { accordion } from "../../styled-system/recipes"
+import { accordion } from "@openepi/styled-system/recipes"
 import { Icon } from "@openepi/icons"
 
 const meta: Meta<typeof Accordion> = {

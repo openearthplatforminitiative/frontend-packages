@@ -12,8 +12,12 @@ import { sizes } from "./theme/tokens/sizes"
 import { radii } from "./theme/tokens/radius"
 import { keyframes } from "./theme/tokens/keyframes"
 import { zIndices } from "./theme/tokens/zIndices"
+import { breakpoints } from "./theme/tokens/breakpoints"
+import pandaPreset from "@pandacss/preset-panda"
+import { layerStyles } from "./theme/layerStyles"
 
 export const preset = definePreset({
+	presets: [pandaPreset],
 	name: "openepi/react-ui",
 	theme: {
 		extend: {
@@ -29,6 +33,8 @@ export const preset = definePreset({
 				radii: radii,
 				zIndex: zIndices,
 			},
+			layerStyles: layerStyles,
+			breakpoints: breakpoints,
 			keyframes: keyframes,
 			textStyles: textStyles,
 			recipes: recipes,
@@ -42,6 +48,7 @@ export const preset = definePreset({
 				properties: {
 					colorPalette: ["gray", "primary", "secondary", "tertiary"],
 				},
+				responsive: true,
 			},
 		],
 	},

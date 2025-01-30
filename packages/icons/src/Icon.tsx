@@ -21,6 +21,8 @@ export const Icon = ({ name, filled, ...rest }: IconProps) => {
 	const ErrorIcon = <DefaultIcon {...rest} />
 
 	const iconName = `${name}${filled ? "Fill" : ""}`
+
+	/* @vite-ignore */
 	const IconComponent = lazy(() =>
 		import("./icons/" + iconName + ".js").catch(() => ({
 			default: () => ErrorIcon,

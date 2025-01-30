@@ -7,7 +7,7 @@ import {
 	CardOuterIcon,
 	CardTitle,
 } from "@openepi/react-ui"
-import { HStack, VStack } from "../../styled-system/jsx"
+import { HStack, VStack } from "@openepi/styled-system/jsx"
 import Image from "next/image"
 
 const meta: Meta<typeof Card> = {

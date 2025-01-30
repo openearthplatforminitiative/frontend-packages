@@ -1,72 +1,56 @@
-import { defineRecipe } from "@pandacss/dev";
+import { defineRecipe } from "@pandacss/dev"
 
 export const inputRecipe = defineRecipe({
-  className: "input",
-  base: {
-    root: {
-			textStyle: 'md',
+	className: "input",
+	base: {
+		root: {
+			textStyle: "md",
 			bg: "transparent",
-			border: '1px solid',
-			borderColor: 'transparent',
-			colorPalette: 'gray',
+			border: "1px solid",
+			borderColor: "transparent",
+			colorPalette: "gray",
 			_disabled: {
-				cursor: 'not-allowed',
+				cursor: "not-allowed",
 			},
 			_focus: {
-				outline: '0',
-				outlineWidth: '2px',
-				outlineStyle: 'solid',
-				outlineColor: 'transparent'
-			}
-    },
-  },
+				outline: "0",
+				outlineWidth: "2px",
+				outlineStyle: "solid",
+				outlineColor: "transparent",
+			},
+		},
+	},
 	variants: {
 		variant: {
 			outlined: {
-				borderRadius: 'lg',
-				h: '11',
-				minW: 'md',
-				p: '2',
-				borderColor: 'border',
-				_focus: {
-					outlineColor: 'gray.focusRing',
-				},
-				_disabled: {
-					color: 'fg.muted',
-					borderColor: 'border.muted',
-				},
+				layerStyle: "outlined",
+				borderRadius: "lg",
+				h: "11",
+				p: "2",
 				_invalid: {
-					borderColor: 'border.error',
+					borderColor: "border.error",
 					_focus: {
-						outlineColor: 'border.error/50',
-					}
-				}
+						outlineColor: "border.error/50",
+					},
+				},
 			},
 			filled: {
-				borderRadius: 'lg',
-				h: '11',
-				minW: 'md',
-				p: '2',
-				borderColor: 'gray.muted',
-				bg: 'gray.muted',
-				_focus: {
-					outlineColor: 'gray.focusRing',
-				},
-				_disabled: {
-					color: 'fg.muted',
-					background: 'gray.subtle',
-				},
+				layerStyle: "filled",
+				borderRadius: "lg",
+				h: "11",
+				minW: "md",
+				p: "2",
 				_invalid: {
-					borderColor: 'border.error',
+					borderColor: "border.error",
 					_focus: {
-						outlineColor: 'error.focusRing',
-					}
-				}
+						outlineColor: "error.focusRing",
+					},
+				},
 			},
-			unstyled: {}
-		}
+			unstyled: {},
+		},
 	},
 	defaultVariants: {
-		variant: 'outlined'
-	}
+		variant: "outlined",
+	},
 })

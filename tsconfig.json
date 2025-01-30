@@ -1,4 +1,10 @@
 {
   "extends": "./tsconfig.build.json",
   "include": ["packages", "src"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+    }
+  }
 }

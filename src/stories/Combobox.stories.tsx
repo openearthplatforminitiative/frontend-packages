@@ -37,7 +37,7 @@ import { KeyboardArrowDown } from "@openepi/icons"
 import { IconButton } from "@openepi/react-ui"
 import { groupBy } from "lodash"
 import { InputGroup } from "@openepi/react-ui"
-import { HStack } from "../../styled-system/jsx"
+import { HStack } from "@openepi/styled-system/jsx"
 
 const initialItems = ["React", "Solid", "Vue"]
 
@@ -72,20 +72,18 @@ const meta: Meta<typeof Combobox> = {
 							rightComponent={
 								<HStack gap={1}>
 									<ComboboxClearTrigger asChild>
-										<IconButton
-											variant="outline"
-											size="xs"
-											colorPalette="gray"
-											icon={<Close />}
-										/>
+										<IconButton variant="outline" size="xs" colorPalette="gray">
+											<Icon>
+												<Close />
+											</Icon>
+										</IconButton>
 									</ComboboxClearTrigger>
 									<ComboboxTrigger asChild>
-										<IconButton
-											variant="subtle"
-											size="xs"
-											colorPalette="gray"
-											icon={<KeyboardArrowDown />}
-										/>
+										<IconButton variant="subtle" size="xs" colorPalette="gray">
+											<Icon>
+												<KeyboardArrowDown />
+											</Icon>
+										</IconButton>
 									</ComboboxTrigger>
 								</HStack>
 							}
@@ -177,16 +175,22 @@ export const MultiSelect: StoryFn<typeof Combobox> = (args: any) => {
 												variant="outline"
 												size="xs"
 												colorPalette="gray"
-												icon={<Close />}
-											/>
+											>
+												<Icon>
+													<Close />
+												</Icon>
+											</IconButton>
 										</ComboboxClearTrigger>
 										<ComboboxTrigger asChild>
 											<IconButton
 												variant="subtle"
 												size="xs"
 												colorPalette="gray"
-												icon={<KeyboardArrowDown />}
-											/>
+											>
+												<Icon>
+													<KeyboardArrowDown />
+												</Icon>
+											</IconButton>
 										</ComboboxTrigger>
 									</HStack>
 								}
@@ -195,6 +199,80 @@ export const MultiSelect: StoryFn<typeof Combobox> = (args: any) => {
 							</InputGroup>
 						)}
 					</ComboboxContext>
+				</ComboboxControl>
+				<Portal>
+					<ComboboxPositioner>
+						<ComboboxContent>
+							{Object.entries(groupedCountries).map(([group, items], index) => (
+								<ComboboxItemGroup key={index}>
+									<ComboboxItemGroupLabel>{group}</ComboboxItemGroupLabel>
+									{items.map((item: string) => (
+										<ComboboxItem key={item} item={item}>
+											<ComboboxItemText>{item}</ComboboxItemText>
+											<ComboboxItemIndicator>
+												<Icon name="Check" />
+											</ComboboxItemIndicator>
+										</ComboboxItem>
+									))}
+								</ComboboxItemGroup>
+							))}
+						</ComboboxContent>
+					</ComboboxPositioner>
+				</Portal>
+			</Combobox>
+		</Field>
+	)
+}
+
+export const Test: StoryFn<typeof Combobox> = (args: any) => {
+	const [items, setItems] = useState(country_list)
+
+	const collection = useMemo(() => createListCollection({ items }), [items])
+	const groupedCountries = useMemo(() => {
+		return groupBy(items, (item) => item[0].toUpperCase())
+	}, [items])
+	const handleInputChange = (details: ComboboxInputValueChangeDetails) => {
+		setItems(
+			country_list.filter((item) =>
+				item.toLowerCase().includes(details.inputValue.toLowerCase())
+			)
+		)
+	}
+
+	return (
+		<Field>
+			<FieldLabel>Countries</FieldLabel>
+			<Combobox
+				invalid
+				{...args}
+				openOnClick
+				multiple
+				collection={collection}
+				onInputValueChange={handleInputChange}
+			>
+				<ComboboxControl>
+					<InputGroup
+						rightComponent={
+							<HStack gap={1}>
+								<ComboboxClearTrigger asChild>
+									<IconButton variant="outline" size="xs" colorPalette="gray">
+										<Icon>
+											<Close />
+										</Icon>
+									</IconButton>
+								</ComboboxClearTrigger>
+								<ComboboxTrigger asChild>
+									<IconButton variant="subtle" size="xs" colorPalette="gray">
+										<Icon>
+											<KeyboardArrowDown />
+										</Icon>
+									</IconButton>
+								</ComboboxTrigger>
+							</HStack>
+						}
+					>
+						<ComboboxInput />
+					</InputGroup>
 				</ComboboxControl>
 				<Portal>
 					<ComboboxPositioner>
@@ -273,16 +351,22 @@ export const MultiSelectWithTags: StoryFn<typeof Combobox> = (args: any) => {
 															variant="outline"
 															size="xs"
 															colorPalette="gray"
-															icon={<Close />}
-														/>
+														>
+															<Icon>
+																<Close />
+															</Icon>
+														</IconButton>
 													</ComboboxClearTrigger>
 													<ComboboxTrigger asChild>
 														<IconButton
 															variant="subtle"
 															size="xs"
 															colorPalette="gray"
-															icon={<KeyboardArrowDown />}
-														/>
+														>
+															<Icon>
+																<KeyboardArrowDown />
+															</Icon>
+														</IconButton>
 													</ComboboxTrigger>
 												</HStack>
 											}

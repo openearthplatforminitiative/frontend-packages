@@ -4,6 +4,7 @@ import {
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
+	Icon,
 } from "@openepi/react-ui"
 import { Input } from "@openepi/react-ui"
 import { InputGroup } from "@openepi/react-ui"
@@ -12,7 +13,7 @@ import { VisibilityOff } from "@openepi/icons"
 import { Mail } from "@openepi/icons"
 import { useState } from "react"
 import { IconButton } from "@openepi/react-ui"
-import { Stack } from "../../styled-system/jsx"
+import { Stack } from "@openepi/styled-system/jsx"
 
 const meta: Meta<typeof Input> = {
 	title: "Form Components/Input",
@@ -25,11 +26,11 @@ export default meta
 
 export const Default: StoryObj<typeof Input> = {}
 
-export const Disabled: StoryFn<typeof Input> = (args) => (
+export const Disabled: StoryFn<typeof Input> = (args: any) => (
 	<Input disabled placeholder="Type here..." {...args} />
 )
 
-export const Grouped: StoryFn<typeof Input> = (args) => {
+export const Grouped: StoryFn<typeof Input> = (args: any) => {
 	const [showPassword, setShowPassword] = useState(false)
 	return (
 		<Stack display="inline-flex">
@@ -42,9 +43,18 @@ export const Grouped: StoryFn<typeof Input> = (args) => {
 						variant="subtle"
 						colorPalette="gray"
 						size="xs"
-						icon={showPassword ? <Visibility /> : <VisibilityOff />}
 						onClick={() => setShowPassword(!showPassword)}
-					/>
+					>
+						{showPassword ? (
+							<Icon>
+								<Visibility />
+							</Icon>
+						) : (
+							<Icon>
+								<VisibilityOff />
+							</Icon>
+						)}
+					</IconButton>
 				}
 			>
 				<Input
@@ -58,7 +68,7 @@ export const Grouped: StoryFn<typeof Input> = (args) => {
 	)
 }
 
-export const WithField: StoryFn<typeof Input> = (args) => (
+export const WithField: StoryFn<typeof Input> = (args: any) => (
 	<Field>
 		<FieldLabel>Label</FieldLabel>
 		<Input placeholder="Type here..." {...args} />

@@ -22,7 +22,7 @@ npm install
 npm run build
 ```
 
-Then you can run storybook to see the results.
+Then you can run storybook to see the results
 
 ```
 npm run storybook

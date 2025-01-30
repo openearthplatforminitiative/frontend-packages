@@ -23,8 +23,10 @@
   "dependencies": {
     "@ark-ui/react": "^4",
     "@openepi/icons": "*",
-    "@zag-js/anatomy": "^0",
+    "@openepi/styled-system": "*",
     "@pandacss/dev": "^0",
+    "@pandacss/preset-panda": "^0.51.1",
+    "@zag-js/anatomy": "^0",
     "lodash": "^4"
   },
   "devDependencies": {
@@ -51,17 +53,6 @@
       "require": {
         "types": "./dist/types/preset.d.ts",
         "default": "./dist/cjs/preset.cjs"
-      }
-    },
-    "./styled-system/*": {
-      "source": "./src/styled-system/*.ts",
-      "import": {
-        "types": "./dist/types/styled-system/*.d.ts",
-        "default": "./dist/esm/styled-system/*.js"
-      },
-      "require": {
-        "types": "./dist/types/styled-system/*.d.ts",
-        "default": "./dist/cjs/styled-system/*.cjs"
       }
     },
     "./*": {

@@ -4,6 +4,7 @@ import {
 	FieldErrorText,
 	FieldHelperText,
 	FieldLabel,
+	Icon,
 } from "@openepi/react-ui"
 import { Input } from "@openepi/react-ui"
 import { InputGroup } from "@openepi/react-ui"
@@ -12,7 +13,7 @@ import { VisibilityOff } from "@openepi/icons"
 import { Mail } from "@openepi/icons"
 import { useState } from "react"
 import { IconButton } from "@openepi/react-ui"
-import { Stack } from "../../styled-system/jsx"
+import { Stack } from "@openepi/styled-system/jsx"
 import { NativeSelect } from "@openepi/react-ui"
 
 const meta: Meta<typeof InputGroup> = {
@@ -56,9 +57,18 @@ export const Grouped: StoryFn<typeof InputGroup> = (args) => {
 						variant="subtle"
 						colorPalette="gray"
 						size="xs"
-						icon={showPassword ? <Visibility /> : <VisibilityOff />}
 						onClick={() => setShowPassword(!showPassword)}
-					/>
+					>
+						{showPassword ? (
+							<Icon>
+								<Visibility />
+							</Icon>
+						) : (
+							<Icon>
+								<VisibilityOff />
+							</Icon>
+						)}
+					</IconButton>
 				}
 				{...args}
 			>

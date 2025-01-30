@@ -1,9 +1,3 @@
-"use client"
-
-// Original code from
-// https://panda-css.com/docs/concepts/slot-recipes#styling-jsx-compound-components
-// https://github.com/cschroeter/park-ui/blob/main/components/react/src/components/ui/styled/utils/create-style-context.tsx
-
 import {
 	type ElementType,
 	type ForwardRefExoticComponent,
@@ -13,12 +7,12 @@ import {
 	forwardRef,
 	useContext,
 } from "react"
+import { cx } from "@openepi/styled-system/css"
 import {
 	type StyledComponent,
 	isCssProperty,
 	styled,
-} from "../styled-system/jsx"
-import { cx } from "../styled-system/css"
+} from "@openepi/styled-system/jsx"
 
 type Props = Record<string, unknown>
 type Recipe = {
@@ -80,6 +74,9 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
 				</StyleContext.Provider>
 			)
 		})
+		// @ts-expect-error
+		StyledSlotProvider.displayName = Component.displayName || Component.name
+
 		return StyledSlotProvider
 	}
 
@@ -98,6 +95,9 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
 				/>
 			)
 		})
+		// @ts-expect-error
+		StyledSlotComponent.displayName = Component.displayName || Component.name
+
 		return StyledSlotComponent
 	}
 

@@ -4,8 +4,10 @@ import { preset } from "./src/preset"
 export default defineConfig({
 	presets: [preset],
 	preflight: true,
-	include: ["./src/**/*.{js,jsx,ts,tsx}", "./stories/**/*.{js,jsx,ts,tsx}"],
+	importMap: "@openepi/styled-system",
+	include: ["./src/**/*.{js,jsx,ts,tsx}"],
 	exclude: [],
+	outExtension: "js",
 	jsxFramework: "react",
-	outdir: "./src/styled-system",
+	outdir: "../styled-system/dist",
 })

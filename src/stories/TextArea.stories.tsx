@@ -18,7 +18,7 @@ export default meta
 
 export const Default: StoryObj<typeof TextArea> = {}
 
-export const WithField: StoryFn<typeof TextArea> = (args) => (
+export const WithField: StoryFn<typeof TextArea> = (args: any) => (
 	<Field>
 		<FieldLabel>Label</FieldLabel>
 		<TextArea placeholder="Type here..." {...args} />

@@ -17,7 +17,7 @@ import {
 	DrawerWrapper,
 } from "@openepi/react-ui"
 import { Portal } from "@openepi/react-ui"
-import { Stack, VStack } from "../../styled-system/jsx"
+import { Stack, VStack } from "@openepi/styled-system/jsx"
 import { Icon } from "@openepi/react-ui"
 
 const meta: Meta<typeof Drawer> = {
@@ -49,12 +49,11 @@ const meta: Meta<typeof Drawer> = {
 			<Portal>
 				<DrawerWrapper>
 					<DrawerCloseTrigger asChild>
-						<IconButton
-							icon={<Close />}
-							colorPalette="gray"
-							variant="ghost"
-							size="md"
-						/>
+						<IconButton colorPalette="gray" variant="ghost" size="md">
+							<Icon>
+								<Close />
+							</Icon>
+						</IconButton>
 					</DrawerCloseTrigger>
 					<DrawerHeader>
 						<DrawerTitle>This is a title</DrawerTitle>
@@ -85,9 +84,11 @@ export const MenuWrapper: StoryFn<typeof Drawer> = (args) => (
 			<Button
 				variant="ghost"
 				colorPalette="gray"
-				leftComponent={<Icon fontSize="28px" icon={<Menu />} />}
 				onClick={(e) => console.log(e)}
 			>
+				<Icon fontSize="28px">
+					<Menu />
+				</Icon>
 				Menu
 			</Button>
 		</DrawerTrigger>
@@ -106,22 +107,20 @@ export const MenuWrapper: StoryFn<typeof Drawer> = (args) => (
 							<Button variant="ghost" colorPalette="secondary">
 								Contact
 							</Button>
-							<Button
-								variant="ghost"
-								colorPalette="secondary"
-								rightComponent={<Icon icon={<ArrowOutward />} />}
-							>
+							<Button variant="ghost" colorPalette="secondary">
 								Link to somewhere
+								<Icon>
+									<ArrowOutward />
+								</Icon>
 							</Button>
 						</VStack>
 					</nav>
 					<DrawerCloseTrigger asChild>
-						<IconButton
-							icon={<Close />}
-							colorPalette="gray"
-							variant="ghost"
-							size="md"
-						/>
+						<IconButton colorPalette="gray" variant="ghost" size="md">
+							<Icon>
+								<Close />
+							</Icon>
+						</IconButton>
 					</DrawerCloseTrigger>
 				</DrawerBody>
 			</DrawerWrapper>
@@ -139,12 +138,11 @@ export const WithoutWrapper: StoryFn<typeof Drawer> = (args) => (
 			<DrawerPositioner>
 				<DrawerContent>
 					<DrawerCloseTrigger asChild>
-						<IconButton
-							icon={<Close />}
-							colorPalette="gray"
-							variant="ghost"
-							size="md"
-						/>
+						<IconButton colorPalette="gray" variant="ghost" size="md">
+							<Icon>
+								<Close />
+							</Icon>
+						</IconButton>
 					</DrawerCloseTrigger>
 					<DrawerHeader>
 						<DrawerTitle>This is a title</DrawerTitle>
@@ -162,54 +160,6 @@ export const WithoutWrapper: StoryFn<typeof Drawer> = (args) => (
 					</DrawerFooter>
 				</DrawerContent>
 			</DrawerPositioner>
-		</Portal>
-	</Drawer>
-)
-
-export const MobileDrawer: StoryFn<typeof Drawer> = (args) => (
-	<Drawer {...args} placement="bottom">
-		<DrawerTrigger asChild>
-			<Button colorPalette="error" rightIcon="Close">
-				Delete item
-			</Button>
-		</DrawerTrigger>
-		<Portal>
-			<DrawerWrapper>
-				<DrawerCloseTrigger
-					w="md"
-					h="5px"
-					borderRadius="full"
-					right={0}
-					left={0}
-					marginInline="auto"
-					bg="gray.solid"
-				>
-					<IconButton
-						icon={<Close />}
-						size="md"
-						colorPalette="gray"
-						variant="plain"
-					/>
-				</DrawerCloseTrigger>
-				<DrawerHeader>
-					<DrawerTitle>Delete item</DrawerTitle>
-				</DrawerHeader>
-				<DrawerBody>
-					<DrawerDescription>
-						Are you sure you want to delete this item?
-					</DrawerDescription>
-				</DrawerBody>
-				<DrawerFooter>
-					<Stack direction="row-reverse">
-						<Button colorPalette="error" rightIcon="Close">
-							Delete
-						</Button>
-						<Button colorPalette="gray" variant="outline">
-							Cancel
-						</Button>
-					</Stack>
-				</DrawerFooter>
-			</DrawerWrapper>
 		</Portal>
 	</Drawer>
 )
