@@ -3,23 +3,24 @@
 import {
 	Toast as ArkToast,
 	Toaster as ArkToaster,
-	type ToasterProps,
+	type ToasterProps as ArkToasterProps,
 	createToaster as arkCreateToaster,
 } from "@ark-ui/react"
 import { createStyleContext } from "../../utils/createStyleContext"
 import type { CreateToasterProps } from "@ark-ui/react"
 import { toast } from "@openepi/styled-system/recipes"
 import type { JsxStyleProps } from "@openepi/styled-system/types"
-import { forwardRef } from "react"
 
 export const createToaster = (props: CreateToasterProps) =>
 	arkCreateToaster(props)
 
+type ToasterProps = ArkToasterProps & {
+	ref?: React.Ref<HTMLDivElement>
+}
+
 const { withProvider, withContext } = createStyleContext(toast)
 
-export const Toaster = forwardRef<HTMLDivElement, ToasterProps>(
-	(props, ref) => <ArkToaster {...props} ref={ref} />
-)
+export const Toaster = (props: ToasterProps) => <ArkToaster {...props} />
 
 Toaster.displayName = "Toaster"
 

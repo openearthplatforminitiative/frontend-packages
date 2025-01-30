@@ -2,7 +2,6 @@
 
 import { Avatar as ArkAvatar } from "@ark-ui/react"
 import { avatar } from "@openepi/styled-system/recipes"
-import { forwardRef } from "react"
 import { styled } from "@openepi/styled-system/jsx"
 import { cx } from "@openepi/styled-system/css"
 import { Person } from "@openepi/icons"
@@ -10,10 +9,11 @@ import { Icon } from "../Icon/Icon"
 export interface AvatarProps extends ArkAvatar.RootProps {
 	name?: string
 	src?: string
+	ref?: React.Ref<HTMLDivElement>
 }
 
-const baseAvatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
-	const { name, src, ...rootProps } = props
+const baseAvatar = (props: AvatarProps) => {
+	const { name, src, ref, ...rootProps } = props
 	return (
 		<ArkAvatar.Root
 			ref={ref}
@@ -45,7 +45,7 @@ const baseAvatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
 			/>
 		</ArkAvatar.Root>
 	)
-})
+}
 
 baseAvatar.displayName = "Avatar"
 

@@ -4,7 +4,6 @@ import { type JsxStyleProps } from "@openepi/styled-system/types"
 import { createStyleContext } from "../../utils/createStyleContext"
 import { Dialog as ArkDrawer, type HTMLArkProps } from "@ark-ui/react"
 import { drawer, type DrawerVariantProps } from "@openepi/styled-system/recipes"
-import { forwardRef } from "react"
 
 const { withRootProvider, withContext } = createStyleContext(drawer)
 
@@ -58,19 +57,19 @@ export const DrawerContent = withContext<
 	JsxStyleProps & ArkDrawer.ContentProps
 >(ArkDrawer.Content, "content")
 
-const baseDrawerWrapper = forwardRef<
-	HTMLDivElement,
-	JsxStyleProps & ArkDrawer.ContentProps
->((props, ref) => {
-	return (
-		<>
-			<DrawerBackdrop />
-			<DrawerPositioner>
-				<DrawerContent ref={ref} {...props} />
-			</DrawerPositioner>
-		</>
-	)
-})
+type DrawerWrapperProps = JsxStyleProps &
+	ArkDrawer.ContentProps & {
+		ref?: React.Ref<HTMLDivElement>
+	}
+
+const baseDrawerWrapper = (props: DrawerWrapperProps) => (
+	<>
+		<DrawerBackdrop />
+		<DrawerPositioner>
+			<DrawerContent {...props} />
+		</DrawerPositioner>
+	</>
+)
 
 baseDrawerWrapper.displayName = "DrawerWrapper"
 

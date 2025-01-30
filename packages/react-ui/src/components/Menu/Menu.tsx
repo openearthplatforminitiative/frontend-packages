@@ -4,7 +4,6 @@ import { Menu as ArkMenu, Portal } from "@ark-ui/react"
 import { createStyleContext } from "../../utils/createStyleContext"
 import { menu, type MenuVariantProps } from "@openepi/styled-system/recipes"
 import { type JsxStyleProps } from "@openepi/styled-system/types"
-import { forwardRef, type ReactNode } from "react"
 import { type IconName } from "@openepi/icons"
 import { Icon } from "../Icon/Icon"
 
@@ -37,21 +36,22 @@ const BaseMenuContent = withContext<
 export type MenuContentProps = {
 	portalled?: boolean
 	children: ReactNode
+	ref?: React.Ref<HTMLDivElement>
 }
 
-export const MenuContent = forwardRef<HTMLDivElement, MenuContentProps>(
-	({ portalled, children, ...props }, ref) => {
-		const content = (
-			<MenuPositioner>
-				<BaseMenuContent ref={ref} {...props}>
-					{children}
-				</BaseMenuContent>
-			</MenuPositioner>
-		)
-		if (portalled) return <Portal>{content}</Portal>
-		return content
-	}
-)
+export const MenuContent = ({
+	portalled,
+	children,
+	...props
+}: MenuContentProps) => {
+	const content = (
+		<MenuPositioner>
+			<BaseMenuContent {...props}>{children}</BaseMenuContent>
+		</MenuPositioner>
+	)
+	if (portalled) return <Portal>{content}</Portal>
+	return content
+}
 
 MenuContent.displayName = "MenuContent"
 
@@ -73,21 +73,19 @@ export const MenuItem = withContext<
 type baseMenuTriggerItemProps = JsxStyleProps &
 	ArkMenu.TriggerItemProps & {
 		icon?: IconName
+		ref?: React.Ref<HTMLDivElement>
 	}
 
-const baseMenuTriggerItem = forwardRef<
-	HTMLDivElement,
-	baseMenuTriggerItemProps
->((props, ref) => {
+const baseMenuTriggerItem = (props: baseMenuTriggerItemProps) => {
 	const { children, icon, ...rest } = props
 	const iconName = icon || "KeyboardArrowRight"
 	return (
-		<ArkMenu.TriggerItem ref={ref} {...rest}>
+		<ArkMenu.TriggerItem {...rest}>
 			{children}
 			<Icon name={iconName} />
 		</ArkMenu.TriggerItem>
 	)
-})
+}
 
 baseMenuTriggerItem.displayName = "MenuTriggerItem"
 

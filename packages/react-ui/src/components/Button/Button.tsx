@@ -1,6 +1,5 @@
 "use client"
 
-import { forwardRef } from "react"
 import { styled } from "@openepi/styled-system/jsx"
 import { button, ButtonVariantProps } from "@openepi/styled-system/recipes"
 import { ark, type HTMLArkProps } from "@ark-ui/react"
@@ -13,6 +12,7 @@ type ButtonProps = HTMLArkProps<"button"> &
 	ButtonVariantProps & {
 		loading?: boolean
 		active?: boolean
+		ref?: React.Ref<HTMLButtonElement>
 	}
 const LoadingIcon = () => (
 	<Icon animation="spin">
@@ -20,8 +20,8 @@ const LoadingIcon = () => (
 	</Icon>
 )
 
-const BaseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-	const { loading, active, ...rest } = props
+const BaseButton = (props: ButtonProps) => {
+	const { loading, active, ref, ...rest } = props
 	return (
 		<ark.button
 			ref={ref}
@@ -38,7 +38,7 @@ const BaseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 			)}
 		</ark.button>
 	)
-})
+}
 
 export const Button = styled(BaseButton, button)
 

@@ -1,7 +1,6 @@
 "use client"
 
 import { ark, type HTMLArkProps } from "@ark-ui/react"
-import { forwardRef } from "react"
 import { createStyleContext } from "../../utils/createStyleContext"
 import { type JsxStyleProps } from "@openepi/styled-system/types"
 import { card } from "@openepi/styled-system/recipes"
@@ -13,84 +12,67 @@ const { withProvider, withContext } = createStyleContext(card)
 
 interface CardProps extends HTMLArkProps<"div"> {
 	external?: boolean
+	ref?: React.Ref<HTMLDivElement>
 }
 
 interface CardSrcIconProps extends HTMLArkProps<"div"> {
 	external?: boolean
+	ref?: React.Ref<HTMLDivElement>
 }
 
-const baseCardSrcIcon = forwardRef<HTMLDivElement, CardSrcIconProps>(
-	(props, ref) => {
-		const { external, ...rest } = props
-		return (
-			<ark.div ref={ref} {...rest}>
-				{external ? (
-					<Icon>
-						<ArrowOutward />
-					</Icon>
-				) : (
-					<Icon>
-						<ArrowForward />
-					</Icon>
-				)}
-			</ark.div>
-		)
-	}
-)
+const baseCardSrcIcon = (props: CardSrcIconProps) => {
+	const { external, ...rest } = props
+	return (
+		<ark.div {...rest}>
+			{external ? (
+				<Icon>
+					<ArrowOutward />
+				</Icon>
+			) : (
+				<Icon>
+					<ArrowForward />
+				</Icon>
+			)}
+		</ark.div>
+	)
+}
 
 baseCardSrcIcon.displayName = "CardSrcIcon"
 interface CardTitleProps extends HTMLArkProps<"span"> {
 	children?: React.ReactNode
 	external?: boolean
+	ref?: React.Ref<HTMLSpanElement>
 }
 
-const baseCardTitle = forwardRef<HTMLSpanElement, CardTitleProps>(
-	(props, ref) => {
-		const { external, ...rest } = props
-		return (
-			<styled.span ref={ref} {...rest}>
-				{props.children}
-				<CardSrcIcon external={external} />
-			</styled.span>
-		)
-	}
-)
+const baseCardTitle = (props: CardTitleProps) => {
+	const { external, ...rest } = props
+	return (
+		<styled.span {...rest}>
+			{props.children}
+			<CardSrcIcon external={external} />
+		</styled.span>
+	)
+}
 
 baseCardTitle.displayName = "CardTitle"
 
-interface CardOuterIconWithIcon extends HTMLArkProps<"div"> {
-	icon: IconName
-	children?: never
+export type CardOuterIconProps = HTMLArkProps<"div"> & {
+	ref?: React.Ref<HTMLDivElement>
 }
 
-interface CardOuterIconWithChildren extends HTMLArkProps<"div"> {
-	icon?: never
-	children: React.ReactNode
+const baseCardOuterIcon = (props: CardOuterIconProps) => {
+	const { children, ...rest } = props
+	return <ark.div {...rest}>{children}</ark.div>
 }
-
-export type CardOuterIconProps =
-	| CardOuterIconWithIcon
-	| CardOuterIconWithChildren
-
-const baseCardOuterIcon = forwardRef<HTMLDivElement, CardOuterIconProps>(
-	(props, ref) => {
-		const { icon, children, ...rest } = props
-		return (
-			<ark.div ref={ref} {...rest}>
-				{children && !icon ? children : icon && <Icon name={icon} />}
-			</ark.div>
-		)
-	}
-)
 
 baseCardOuterIcon.displayName = "CardOuterIcon"
 
-const BaseCard = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
+const BaseCard = (props: CardProps) => {
 	const { external, ...rest } = props
 	if (external) {
-		return <ark.div ref={ref} data-external {...rest} />
-	} else return <ark.div ref={ref} {...rest} />
-})
+		return <ark.div data-external {...rest} />
+	} else return <ark.div {...rest} />
+}
 
 BaseCard.displayName = "BaseCard"
 

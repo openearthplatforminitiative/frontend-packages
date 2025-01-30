@@ -1,11 +1,11 @@
 "use client"
 
-import { forwardRef } from "react"
 import { styled } from "@openepi/styled-system/jsx"
 import { iconButton } from "@openepi/styled-system/recipes"
 import { ark, type HTMLArkProps } from "@ark-ui/react"
 import { Icon } from "../Icon/Icon"
 import { type IconName } from "@openepi/icons"
+import { JSX } from "react"
 
 interface IconComponent {
 	children: JSX.Element
@@ -21,6 +21,7 @@ type IconButtonProps = Omit<HTMLArkProps<"button">, "children"> &
 	Icon & {
 		loading?: boolean
 		active?: boolean
+		ref?: React.Ref<HTMLButtonElement>
 	}
 
 const isIconComponent = (props: Icon): props is IconComponent => {
@@ -31,32 +32,29 @@ const isIconButtonName = (props: Icon): props is IconButtonName => {
 	return (props as IconButtonName).iconName !== undefined
 }
 
-const baseButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-	(props, ref) => {
-		const { loading, active, ...rest } = props
+const baseButton = (props: IconButtonProps) => {
+	const { loading, active, ...rest } = props
 
-		if (!isIconComponent(props) && !isIconButtonName(props)) {
-			throw new Error("Either icon or iconName must be present")
-		}
-
-		return (
-			<ark.button
-				ref={ref}
-				disabled={loading ? loading : false}
-				data-active={active ? active : undefined}
-				{...rest}
-			>
-				{loading ? (
-					<Icon animation="spin" name="ProgressActivity" />
-				) : isIconButtonName(props) ? (
-					<Icon name={props.iconName} />
-				) : (
-					props.children
-				)}
-			</ark.button>
-		)
+	if (!isIconComponent(props) && !isIconButtonName(props)) {
+		throw new Error("Either icon or iconName must be present")
 	}
-)
+
+	return (
+		<ark.button
+			disabled={loading ? loading : false}
+			data-active={active ? active : undefined}
+			{...rest}
+		>
+			{loading ? (
+				<Icon animation="spin" name="ProgressActivity" />
+			) : isIconButtonName(props) ? (
+				<Icon name={props.iconName} />
+			) : (
+				props.children
+			)}
+		</ark.button>
+	)
+}
 
 baseButton.displayName = "BaseButton"
 
