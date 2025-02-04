@@ -3,7 +3,7 @@
 import { ark } from "@ark-ui/react"
 import { styled } from "@openepi/styled-system/jsx"
 import { inputGroup } from "@openepi/styled-system/recipes"
-import {
+import React, {
 	useRef,
 	cloneElement,
 	type ReactElement,
@@ -12,10 +12,17 @@ import {
 	useState,
 } from "react"
 
+interface ReactElementWithRef extends ReactElement {
+	props: {
+		ref?: React.Ref<HTMLElement>
+		[key: string]: any
+	}
+}
+
 export type InputGroupProps = {
 	leftComponent?: ReactNode
 	rightComponent?: ReactNode
-	children: ReactElement
+	children: ReactElementWithRef
 	ref?: React.Ref<HTMLDivElement>
 }
 
@@ -44,6 +51,13 @@ const BaseInputGroup = (props: InputGroupProps) => {
 	const [childIsDisabled, setChildIsDisabled] = useState(false)
 	const [childIsInvalid, setChildIsInvalid] = useState(false)
 
+	cloneElement(children, {})
+
+	const clonedChildren = cloneElement(children, {
+		ref: mergeRefs(children.props.ref, localRef),
+		style: { flex: 1 },
+	})
+
 	useEffect(() => {
 		const updateStates = () => {
 			setChildIsDisabled(localRef.current?.getAttribute("disabled") !== null)
@@ -52,8 +66,6 @@ const BaseInputGroup = (props: InputGroupProps) => {
 
 		updateStates()
 	}, [localRef])
-
-	const clonedChildren = cloneElement(children)
 
 	return (
 		<ark.div

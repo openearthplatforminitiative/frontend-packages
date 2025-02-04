@@ -9,6 +9,15 @@ import {
 } from "@openepi/react-ui"
 import { HStack, VStack } from "@openepi/styled-system/jsx"
 import Image from "next/image"
+import { Icon } from "@openepi/react-ui"
+import {
+	Cardiology,
+	Forest,
+	LocationOn,
+	Psychiatry,
+	Rainy,
+	Water,
+} from "@openepi/icons"
 
 const meta: Meta<typeof Card> = {
 	title: "Components/Card",
@@ -18,7 +27,11 @@ const meta: Meta<typeof Card> = {
 		<Card {...args}>
 			<CardContent>
 				<CardBody>
-					<CardOuterIcon icon="Water" />
+					<CardOuterIcon>
+						<Icon>
+							<Water />
+						</Icon>
+					</CardOuterIcon>
 					<CardTitle>Flood</CardTitle>
 					<CardDescription>
 						This section provides access to real-time flood forecasts.
@@ -38,7 +51,11 @@ export const External: StoryFn = (args) => (
 		<Card {...args} external>
 			<CardContent>
 				<CardBody>
-					<CardOuterIcon icon="Rainy" />
+					<CardOuterIcon>
+						<Icon>
+							<Rainy />
+						</Icon>
+					</CardOuterIcon>
 					<CardTitle external>Weather</CardTitle>
 					<CardDescription>
 						This section provides access to real-time flood forecasts.
@@ -49,7 +66,11 @@ export const External: StoryFn = (args) => (
 		<Card {...args} external>
 			<CardContent>
 				<CardBody>
-					<CardOuterIcon icon="Water" />
+					<CardOuterIcon>
+						<Icon>
+							<Water />
+						</Icon>
+					</CardOuterIcon>
 					<CardTitle external>Flood</CardTitle>
 					<CardDescription>
 						This section provides access to real-time flood forecasts.
@@ -60,7 +81,11 @@ export const External: StoryFn = (args) => (
 		<Card {...args} external>
 			<CardContent>
 				<CardBody>
-					<CardOuterIcon icon="LocationOn" />
+					<CardOuterIcon>
+						<Icon>
+							<LocationOn />
+						</Icon>
+					</CardOuterIcon>
 					<CardTitle external>Geocoding</CardTitle>
 					<CardDescription>
 						This section provides access to real-time flood forecasts.
@@ -71,7 +96,11 @@ export const External: StoryFn = (args) => (
 		<Card {...args} external>
 			<CardContent>
 				<CardBody>
-					<CardOuterIcon icon="Forest" />
+					<CardOuterIcon>
+						<Icon>
+							<Forest />
+						</Icon>
+					</CardOuterIcon>
 					<CardTitle external>Deforestation</CardTitle>
 					<CardDescription>
 						This section provides access to real-time flood forecasts.
@@ -82,7 +111,11 @@ export const External: StoryFn = (args) => (
 		<Card {...args} external>
 			<CardContent>
 				<CardBody>
-					<CardOuterIcon icon="Psychiatry" />
+					<CardOuterIcon>
+						<Icon>
+							<Psychiatry />
+						</Icon>
+					</CardOuterIcon>
 					<CardTitle external>Soil</CardTitle>
 					<CardDescription>
 						This section provides access to real-time flood forecasts.
@@ -93,7 +126,11 @@ export const External: StoryFn = (args) => (
 		<Card {...args} external>
 			<CardContent>
 				<CardBody>
-					<CardOuterIcon icon="Cardiology" />
+					<CardOuterIcon>
+						<Icon>
+							<Cardiology />
+						</Icon>
+					</CardOuterIcon>
 					<CardTitle external>Crop Health</CardTitle>
 					<CardDescription>
 						This section provides access to real-time flood forecasts.

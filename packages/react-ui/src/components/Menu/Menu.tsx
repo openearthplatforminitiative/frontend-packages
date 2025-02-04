@@ -6,6 +6,7 @@ import { menu, type MenuVariantProps } from "@openepi/styled-system/recipes"
 import { type JsxStyleProps } from "@openepi/styled-system/types"
 import { type IconName } from "@openepi/icons"
 import { Icon } from "../Icon/Icon"
+import { ReactNode } from "react"
 
 const { withRootProvider, withContext } = createStyleContext(menu)
 

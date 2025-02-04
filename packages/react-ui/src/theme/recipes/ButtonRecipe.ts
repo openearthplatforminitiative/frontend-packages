@@ -59,28 +59,40 @@ export const buttonRecipe = defineRecipe({
 				},
 			},
 			subtle: {
-				bg: "colorPalette.muted",
-				color: "colorPalette.fg",
+				bg: "colorPalette.subtle",
+				color: "black",
 				_hover: {
+					bg: "colorPalette.muted",
+				},
+				_active: {
+					bg: "colorPalette.emphasized",
+				},
+				_expanded: {
 					bg: "colorPalette.emphasized",
 				},
 			},
 			surface: {
 				bg: "colorPalette.subtle",
-				color: "colorPalette.fg",
-				borderColor: "colorPalette.muted",
+				color: "black",
+				borderColor: "colorPalette.emphasized",
 				_hover: {
 					bg: "colorPalette.muted",
 				},
+				_active: {
+					bg: "colorPalette.emphasized",
+				},
 				_expanded: {
-					bg: "colorPalette.muted",
+					bg: "colorPalette.emphasized",
 				},
 			},
 			outline: {
 				borderColor: "colorPalette.solid",
-				color: "colorPalette.fg",
+				color: "black",
 				_hover: {
 					bg: "colorPalette.subtle",
+				},
+				_active: {
+					bg: "colorPalette.muted",
 				},
 				_expanded: {
 					bg: "colorPalette.muted",
@@ -92,7 +104,7 @@ export const buttonRecipe = defineRecipe({
 			ghost: {
 				color: "fg",
 				_hover: {
-					bg: "gray.subtle",
+					bg: "bg.subtle",
 				},
 				_open: {
 					bg: "colorPalette.muted",
@@ -105,7 +117,16 @@ export const buttonRecipe = defineRecipe({
 				},
 			},
 			plain: {
-				color: "colorPalette.fg",
+				color: "colorPalette.solid",
+				_hover: {
+					color: "colorPalette.empasized",
+				},
+				_active: {
+					color: "colorPalette.fg",
+				},
+				_expanded: {
+					color: "colorPalette.fg",
+				},
 			},
 		},
 		size: {

@@ -75,7 +75,7 @@ const meta: Meta<typeof Dialog> = {
 					<DialogFooter>
 						<Stack direction="row-reverse">
 							<Button>Save</Button>
-							<Button colorPalette="gray" variant="outline">
+							<Button colorPalette="gray" variant="subtle">
 								Cancel
 							</Button>
 						</Stack>
@@ -114,7 +114,7 @@ export const WithoutWrapper: StoryFn<typeof Dialog> = (args: any) => (
 					<DialogFooter>
 						<Stack direction="row-reverse">
 							<Button>Save</Button>
-							<Button colorPalette="gray" variant="outline">
+							<Button colorPalette="gray" variant="subtle">
 								Cancel
 							</Button>
 						</Stack>
@@ -167,7 +167,7 @@ export const DeleteConfirmation: StoryFn<typeof Dialog> = (args: any) => (
 								<Close />
 							</Icon>
 						</Button>
-						<Button colorPalette="gray" variant="outline">
+						<Button colorPalette="gray" variant="subtle">
 							Cancel
 						</Button>
 					</Stack>

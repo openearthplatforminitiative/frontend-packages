@@ -46,7 +46,16 @@ export const preset = definePreset({
 		css: [
 			{
 				properties: {
-					colorPalette: ["gray", "primary", "secondary", "tertiary"],
+					colorPalette: [
+						"primary",
+						"secondary",
+						"tertiary",
+						"gray",
+						"error",
+						"warning",
+						"success",
+						"info",
+					],
 				},
 				responsive: true,
 			},

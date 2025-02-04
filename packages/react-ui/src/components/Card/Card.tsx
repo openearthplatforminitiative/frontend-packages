@@ -6,7 +6,7 @@ import { type JsxStyleProps } from "@openepi/styled-system/types"
 import { card } from "@openepi/styled-system/recipes"
 import { styled } from "@openepi/styled-system/jsx"
 import { Icon } from "../Icon/Icon"
-import { ArrowForward, ArrowOutward, type IconName } from "@openepi/icons"
+import { ArrowForward, ArrowOutward } from "@openepi/icons"
 
 const { withProvider, withContext } = createStyleContext(card)
 

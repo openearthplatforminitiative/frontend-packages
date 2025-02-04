@@ -64,7 +64,7 @@ const meta: Meta<typeof Drawer> = {
 					<DrawerFooter>
 						<Stack direction="row-reverse">
 							<Button>Save</Button>
-							<Button colorPalette="gray" variant="outline">
+							<Button colorPalette="gray" variant="subtle">
 								Cancel
 							</Button>
 						</Stack>
@@ -153,7 +153,7 @@ export const WithoutWrapper: StoryFn<typeof Drawer> = (args) => (
 					<DrawerFooter>
 						<Stack direction="row-reverse">
 							<Button>Save</Button>
-							<Button colorPalette="gray" variant="outline">
+							<Button colorPalette="gray" variant="subtle">
 								Cancel
 							</Button>
 						</Stack>
